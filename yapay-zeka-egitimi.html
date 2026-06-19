@@ -193,6 +193,8 @@
       border: 2px dashed var(--border);
       border-radius: 12px;
       min-height: 150px;
+      max-height: 280px;
+      overflow-y: auto;
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -722,6 +724,10 @@
 
     // Add module to program array
     function addModuleToProgram(id) {
+      if (selectedModules.some(m => m.id === id)) {
+        alert("Bu modül programınıza zaten eklenmiş.");
+        return;
+      }
       const moduleData = allModules.find(m => m.id === id);
       if (!moduleData) return;
       
