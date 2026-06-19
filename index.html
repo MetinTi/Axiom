@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axiom — Yapay Zeka & Yetkinlik Entegrasyonu</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Axiom, yapay zekayı kurumunuzun iş yapış biçimine entegre ederek gerçek yetkinlikler inşa eder. Eğitim bütçenizi somut iş sonuçlarına dönüştürün.">
+  <meta name="keywords" content="yapay zeka, kurumsal eğitim, yetkinlik gelişimi, yapay zeka entegrasyonu, satış eğitimi, liderlik eğitimi, yapay zeka ölçümü">
+  <meta name="author" content="Axiom">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Axiom — Yapay Zeka & Yetkinlik Entegrasyonu">
+  <meta property="og:description" content="Araç öğretmiyoruz. Yetkinlik inşa ediyoruz. Yapay zekayı davranış değişikliği ve iş sonuçlarıyla birleştiren eğitim modelleri.">
+  <meta property="og:type" content="website">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="index.css?v=10">
+</head>
+<body>
+
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <div class="logo-icon-wrapper">
+          <img src="assets/axiom_logo.png" alt="Axiom Emblem" class="logo-icon-img">
+        </div>
+        <div class="logo-details">
+          <div class="logo-title"><span>A</span>X<span>I</span>OM</div>
+          <div class="logo-subtitle">Artificial Intelligence. Real Competence.</div>
+        </div>
+      </a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="active">Manifesto</a></li>
+          <li><a href="programlar.html">Programlar</a></li>
+          <li><a href="dna.html">DNA</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+        <div class="lang-switcher">
+          <a href="index.html" class="lang-link active" title="Türkçe">🇹🇷 <span class="lang-label">TR</span></a>
+          <span class="lang-divider">|</span>
+          <a href="en/index.html" class="lang-link" title="English">🇬🇧 <span class="lang-label">EN</span></a>
+        </div>
+      </nav>
+      
+      <button class="hamburger" aria-label="Menü">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-left fade-in">
+        <div class="corvis-bot-wrapper">
+          <!-- Robot Visual Area -->
+          <div class="corvis-robot-container state-idle" id="corvis-robot">
+            <!-- Concentric Radial Ambient Glow -->
+            <div class="corvis-ambient-glow" id="corvis-glow"></div>
+            
+            <!-- Outer Orbit HUD Ring 1 -->
+            <svg class="corvis-hud-ring ring-1" viewBox="0 0 200 200">
+              <circle cx="100" cy="100" r="92" fill="none" stroke="#FFE500" stroke-width="1" stroke-dasharray="6, 8, 40, 8, 12, 16" />
+              <text class="corvis-hud-text">
+                <textPath href="#orbitPath" startOffset="10%">
+                  SYS.CORTEX.ONLINE // LATENCY.NIL // STAT_OK
+                </textPath>
+              </text>
+              <path id="orbitPath" d="M 12,100 A 88,88 0 1,1 188,100" fill="none" />
+            </svg>
+            
+            <!-- Outer Orbit HUD Ring 2 -->
+            <svg class="corvis-hud-ring ring-2" viewBox="0 0 200 200">
+              <circle cx="100" cy="100" r="82" fill="none" stroke="#FFE500" stroke-width="0.5" stroke-dasharray="2, 6, 12, 6" />
+              <circle cx="100" cy="18" r="2.5" fill="#FFE500" class="ping-marker" />
+              <circle cx="100" cy="18" r="1.5" fill="#FFE500" />
+              <circle cx="100" cy="182" r="2.5" fill="#A855F7" class="pulse-marker" />
+              <circle cx="100" cy="182" r="1.5" fill="#A855F7" />
+              <circle cx="18" cy="100" r="2" fill="#FFE500" class="pulse-marker" />
+              <circle cx="182" cy="100" r="2" fill="#FFE500" class="pulse-marker" />
+            </svg>
+            
+            <!-- Central Robot Face SVG -->
+            <div class="corvis-face-wrapper" id="corvis-face">
+              <svg class="corvis-face-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="chassisMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#1b1608" />
+                    <stop offset="25%" stop-color="#2f2612" />
+                    <stop offset="50%" stop-color="#3d321a" />
+                    <stop offset="75%" stop-color="#211a0a" />
+                    <stop offset="100%" stop-color="#120e05" />
+                  </linearGradient>
+                  <linearGradient id="glossHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#FFE500" stop-opacity="0.4" />
+                    <stop offset="40%" stop-color="#FFE500" stop-opacity="0.1" />
+                    <stop offset="100%" stop-color="transparent" stop-opacity="0" />
+                  </linearGradient>
+                  <linearGradient id="neonCircuit" x1="0%" y1="0%" x2="100%" y2="50%">
+                    <stop offset="0%" stop-color="#FFE500" />
+                    <stop offset="50%" stop-color="#FF9F00" />
+                    <stop offset="100%" stop-color="#A855F7" />
+                  </linearGradient>
+                  <radialGradient id="darkUnderplate" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#121008" />
+                    <stop offset="70%" stop-color="#090804" />
+                    <stop offset="100%" stop-color="#030201" />
+                  </radialGradient>
+                  <radialGradient id="opticRetina" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#ffffff" />
+                    <stop offset="25%" stop-color="#FFE500" />
+                    <stop offset="65%" stop-color="#A07000" stop-opacity="0.9" />
+                    <stop offset="100%" stop-color="#181302" stop-opacity="0" />
+                  </radialGradient>
+                  <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="1.5" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                  </filter>
+                </defs>
+                
+                <!-- Left Ear -->
+                <g transform="translate(21, 48)">
+                  <path d="M 0,-8 L -4,-6 L -4,6 L 0,8 Z" fill="#120e05" stroke="#2f2612" stroke-width="0.8" />
+                  <ellipse cx="-4" cy="0" rx="3" ry="8" fill="#211a0a" stroke="#FFE500" stroke-width="0.8" />
+                  <ellipse cx="-4" cy="0" rx="1.5" ry="4.5" fill="#120e05" stroke="#FFE500" stroke-width="0.5" stroke-dasharray="1 1" />
+                  <line x1="-4" y1="0" x2="-4" y2="-4.5" stroke="#FFE500" stroke-width="0.5" opacity="0.8" />
+                  <line x1="-4" y1="0" x2="-5.5" y2="2.5" stroke="#FFE500" stroke-width="0.5" opacity="0.8" />
+                  <line x1="-4" y1="0" x2="-2.5" y2="2.5" stroke="#FFE500" stroke-width="0.5" opacity="0.8" />
+                </g>
+                
+                <!-- Right Ear -->
+                <g transform="translate(79, 48)">
+                  <path d="M 0,-8 L 4,-6 L 4,6 L 0,8 Z" fill="#120e05" stroke="#2f2612" stroke-width="0.8" />
+                  <ellipse cx="4" cy="0" rx="3" ry="8" fill="#211a0a" stroke="#FFE500" stroke-width="0.8" />
+                  <ellipse cx="4" cy="0" rx="1.5" ry="4.5" fill="#120e05" stroke="#FFE500" stroke-width="0.5" stroke-dasharray="1 1" />
+                  <line x1="4" y1="0" x2="4" y2="-4.5" stroke="#FFE500" stroke-width="0.5" opacity="0.8" />
+                  <line x1="4" y1="0" x2="2.5" y2="2.5" stroke="#FFE500" stroke-width="0.5" opacity="0.8" />
+                  <line x1="4" y1="0" x2="5.5" y2="2.5" stroke="#FFE500" stroke-width="0.5" opacity="0.8" />
+                </g>
+                
+                <!-- Deep Core Inner Head Silhouette -->
+                <path d="M30,12 C30,12 40,6 50,6 C60,6 70,12 70,12 C76,22 79,35 79,48 C79,64 73,77 66,84 C59,91 50,93 50,93 C50,93 41,91 34,84 C27,77 21,64 21,48 C21,35 24,22 30,12 Z" fill="url(#darkUnderplate)" stroke="#292111" stroke-width="1.5" />
+                
+                <!-- Outer Armor Plating -->
+                <path class="chassis-plating" d="M31,13 C31,13 40,7.5 50,7.5 C60,7.5 69,13 69,13 C74.5,22.5 77,34.5 77,48 C77,62.5 71.5,74.5 65,81.5 C59,88.5 50,90.5 50,90.5 C50,90.5 41,88.5 35,81.5 C28.5,74.5 23,62.5 23,48 C23,34.5 25.5,22.5 31,13 Z" fill="url(#chassisMetallic)" stroke="url(#neonCircuit)" stroke-width="1" />
+                
+                <!-- Glossy Reflections -->
+                <path d="M31,13 C31,13 40,7.5 50,7.5 C60,7.5 69,13 69,13 C72,20 74,28 74,38 C60,35 40,35 26,38 C26,28 28,20 31,13 Z" fill="url(#glossHighlight)" opacity="0.7" />
+                
+                <!-- Brain Cortex Micro-Circuits -->
+                <g opacity="0.8">
+                  <line x1="50" y1="12" x2="50" y2="24" stroke="#FFE500" stroke-width="0.8" />
+                  <circle cx="50" cy="18" r="1" fill="#fff" filter="url(#glowFilter)" />
+                  <path d="M50,14 C44,14 40,16 38,20 M50,14 C56,14 60,16 62,20 M50,21 C45,21 42,23 39,26 L35,26 M50,21 C55,21 58,23 61,26 L65,26" stroke="#FFE500" stroke-width="0.6" stroke-linecap="round" />
+                  <circle cx="38" cy="20" r="0.7" fill="#FFE500" />
+                  <circle cx="62" cy="20" r="0.7" fill="#FFE500" />
+                  <circle cx="35" cy="26" r="0.7" fill="#A855F7" />
+                  <circle cx="65" cy="26" r="0.7" fill="#A855F7" />
+                </g>
+                
+                <!-- Forehead Hexagonal Neural AI Microchip Core -->
+                <g transform="translate(50, 24)">
+                  <polygon points="-8,-4 8,-4 12,0 8,4 -8,4 -12,0" fill="#020c15" stroke="#FFE500" stroke-width="0.8" filter="url(#glowFilter)" />
+                  <text font-family="monospace" font-size="4.5" font-weight="bold" fill="#FFE500" text-anchor="middle" y="1.5" class="chip-text">AXIS</text>
+                  <path d="M-12,0 L-18,-4 M12,0 L18,-4 M0,-4 L0,-9" stroke="#FFE500" stroke-width="0.5" opacity="0.7" />
+                </g>
+                
+                <!-- Dual Holographic Eye Optics -->
+                <!-- Left Eye -->
+                <g transform="translate(36, 45)">
+                  <ellipse cx="0" cy="0" rx="9.5" ry="6.5" fill="#131003" stroke="#3d3312" stroke-width="0.8" />
+                  <circle class="aperture-ring" cx="0" cy="0" r="5" stroke="#FF9F00" stroke-width="0.5" stroke-dasharray="1.5 1" />
+                  <circle cx="0" cy="0" r="3.5" fill="url(#opticRetina)" filter="url(#glowFilter)" />
+                  <circle cx="0" cy="0" r="1" fill="#ffffff" />
+                  <path d="M-8,5 L-11,8 M8,5 L11,8" stroke="#FFE500" stroke-width="0.4" opacity="0.5" />
+                </g>
+                <!-- Right Eye -->
+                <g transform="translate(64, 45)">
+                  <ellipse cx="0" cy="0" rx="9.5" ry="6.5" fill="#131003" stroke="#3d3312" stroke-width="0.8" />
+                  <circle class="aperture-ring" cx="0" cy="0" r="5" stroke="#FF9F00" stroke-width="0.5" stroke-dasharray="1.5 1" />
+                  <circle cx="0" cy="0" r="3.5" fill="url(#opticRetina)" filter="url(#glowFilter)" />
+                  <circle cx="0" cy="0" r="1" fill="#ffffff" />
+                  <path d="M-8,5 L-11,8 M8,5 L11,8" stroke="#FFE500" stroke-width="0.4" opacity="0.5" />
+                </g>
+                
+                <!-- Temple Synaptic Status Nodes -->
+                <circle cx="21" cy="45" r="2.5" fill="#FFE500" class="ping-marker" />
+                <circle cx="21" cy="45" r="1.5" fill="#FFE500" />
+                <circle cx="79" cy="45" r="2.5" fill="#FFE500" class="ping-marker" />
+                <circle cx="79" cy="45" r="1.5" fill="#FFE500" />
+                
+                <!-- Noseplate Contours -->
+                <path d="M48,53 L50,56 L52,53 M50,38 L50,56" stroke="#FFE500" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8" />
+                
+                <!-- Cheek Circuits -->
+                <path d="M26,52 C26,52 30,58 35,62 M74,52 C74,52 70,58 65,62" stroke="#FFE500" stroke-width="0.6" stroke-linecap="round" opacity="0.5" />
+                <path d="M32,58 L28,64 L28,70 M68,58 L72,64 L72,70" stroke="#FFE500" stroke-width="0.5" stroke-linecap="round" opacity="0.7" />
+                <circle cx="28" cy="70" r="0.8" fill="#FFE500" />
+                <circle cx="72" cy="70" r="0.8" fill="#FFE500" />
+                
+                <!-- Cyber Mouth Sensor Arrays -->
+                <g transform="translate(50, 68)" class="corvis-mouth-group">
+                  <rect x="-12" y="-1.5" width="24" height="3" rx="1.5" fill="#060501" stroke="#A07000" stroke-width="0.8" />
+                  <line class="mouth-line" x1="-10" y1="0" x2="10" y2="0" stroke="#A07000" stroke-width="0.8" />
+                </g>
+                
+                <!-- Heavy Tech Ventilation Grill -->
+                <path d="M33,74 L38,79 M36,76 L41,81 M67,74 L62,79 M64,76 L59,81" stroke="#FFE500" stroke-width="1" stroke-linecap="round" opacity="0.4" />
+                
+                <!-- Chin structural lock indicator -->
+                <rect x="47" y="80" width="6" height="5" rx="1" fill="#060501" stroke="url(#neonCircuit)" stroke-width="0.8" />
+                <circle cx="50" cy="82.5" r="1.2" fill="#FFE500" class="pulse-marker" />
+                
+                <!-- Foreground Beacon light point -->
+                <circle class="beacon-light" cx="50" cy="7.5" r="1.5" fill="#FFE500" />
+              </svg>
+            </div>
+          </div>
+          
+          <!-- Chat Console Area -->
+          <div class="corvis-chat-container">
+            <div class="corvis-chat-header">
+              <div class="status-dot"></div>
+              <span class="status-text">AXIS v9.12 ONLINE</span>
+            </div>
+            <div class="corvis-chat-messages" id="corvis-messages">
+              <!-- Welcome message -->
+              <div class="chat-message bot">
+                <div class="message-content">
+                  Merhaba! Ben Axis, Axiom'un yapay zeka asistanıyım. Axiom platformu, eğitimlerimiz veya kurucularımız hakkında her şeyi bana sorabilirsiniz.
+                </div>
+              </div>
+            </div>
+            <div class="corvis-quick-replies" id="corvis-replies">
+              <button class="quick-reply-btn" data-question="Axiom Nedir?">Axiom Nedir?</button>
+              <button class="quick-reply-btn" data-question="Programlar">Programlar</button>
+              <button class="quick-reply-btn" data-question="Ekip / DNA">Ekip / DNA</button>
+              <button class="quick-reply-btn" data-question="İletişim">İletişim</button>
+            </div>
+            <form class="corvis-chat-form" id="corvis-form">
+              <input type="text" class="corvis-chat-input" id="corvis-input" placeholder="Sorunuzu buraya yazın..." autocomplete="off" required />
+              <button type="submit" class="corvis-chat-submit" aria-label="Gönder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="send-icon">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-content fade-in" style="animation-delay: 0.2s;">
+        <span class="eyebrow">Axiom Yapay Zeka & Yetkinlik Platformu</span>
+        <h1 class="hero-title text-gradient">
+          ARAÇ ÖĞRETMİYORUZ.<br>
+          YETKİNLİK İNŞA EDİYORUZ.
+        </h1>
+        <p class="hero-subtitle">
+          Axiom ile kurumunuzun geleceğini şekillendirin. Yapay zeka yetkinliklerini stratejik bir avantaja dönüştüren, veriye dayalı eğitim ve gelişim platformu.
+        </p>
+        <div class="hero-actions">
+          <a href="programlar.html" class="btn btn-primary">Hemen Başla</a>
+          <a href="iletisim.html" class="btn btn-secondary">Daha Fazla Bilgi Al</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO STATEMENTS STRIP -->
+  <section class="statements-strip">
+    <div class="container statements-grid">
+      <div class="statement-card">
+        <span class="statement-num">01</span>
+        <p class="statement-text">Eğitim bitmeden ölçüm başlar.</p>
+      </div>
+      <div class="statement-card">
+        <span class="statement-num">02</span>
+        <p class="statement-text">AI her modülün içinde. Ayrı ders değil.</p>
+      </div>
+      <div class="statement-card">
+        <span class="statement-num">03</span>
+        <p class="statement-text">Program bitince ilişki bitmez.</p>
+      </div>
+      <div class="statement-card">
+        <span class="statement-num">04</span>
+        <p class="statement-text">"İnşallah" denmez. Sayıyla konuşulur.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY / FORMULA SECTION -->
+  <section class="themed-section section-bg-surface" id="formula">
+    <div class="container formula-grid">
+      <div class="formula-display">
+        <span class="eyebrow">Metodoloji</span>
+        <div class="formula-math">
+          <span class="math-accent">E</span>
+          <span class="math-operator">=</span>
+          <span>Y</span>
+          <span class="math-operator">×</span>
+          <span class="math-sup-wrapper">
+            <span class="math-accent">AI</span>
+            <span class="math-sup">2</span>
+          </span>
+        </div>
+        <p class="formula-sub">Einstein affetsin. E = mc² fizik içindi. Bu formül iş hayatı için.</p>
+        <p class="formula-statement">
+          Yetkinlik eğitimi aldınız. AI eğitimi aldınız.<br>
+          İkisi hiç aynı denklemde buluşmadı.<br><br>
+          <strong>Biz o denklemi kuruyoruz.</strong>
+        </p>
+      </div>
+      
+      <div class="formula-right">
+        <div class="variables-list">
+          <div class="variable-card">
+            <div class="variable-symbol">E</div>
+            <div class="variable-info">
+              <h3 class="variable-name">Etki</h3>
+              <p class="variable-desc">Satışta, liderlikte, müşteri hizmetlerinde ürettiğiniz gerçek iş sonucu.</p>
+            </div>
+          </div>
+          <div class="variable-card">
+            <div class="variable-symbol">Y</div>
+            <div class="variable-info">
+              <h3 class="variable-name">Yetkinlik</h3>
+              <p class="variable-desc">Baskı altında ekibinizin ne yaptığı. Gerçek kapasite ve davranış biçimi.</p>
+            </div>
+          </div>
+          <div class="variable-card">
+            <div class="variable-symbol">AI²</div>
+            <div class="variable-info">
+              <h3 class="variable-name">Yapay Zekanın Karesi</h3>
+              <p class="variable-desc">AI entegrasyonunu ikiye katlarsanız üretilen etki dörde katlanır. Ancak yetkinlik (Y) sıfırsa, formülün sonucu da sıfırdır.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE SIMULATOR SECTION -->
+  <section class="themed-section" id="simulator">
+    <div class="container">
+      <span class="eyebrow" style="margin-bottom: 40px;">Simülatör</span>
+      <div class="simulator-layout">
+        <div class="simulator-controls">
+          <h2 class="section-heading" style="font-size: 28px; margin-bottom: 0;">Etki Faktörünü Hesaplayın</h2>
+          
+          <div class="slider-group">
+            <div class="slider-header">
+              <span class="slider-title">Ekip Yetkinlik Seviyesi (Y)</span>
+              <span class="slider-value" id="yetkinlik-val">50</span>
+            </div>
+            <input type="range" id="yetkinlik-slider" class="slider-input" min="0" max="100" value="50">
+            <p class="slider-desc">Davranışsal olgunluk, iletişim, problem çözme ve liderlik kapasitesi.</p>
+          </div>
+          
+          <div class="slider-group">
+            <div class="slider-header">
+              <span class="slider-title">Yapay Zeka Entegrasyonu (AI)</span>
+              <span class="slider-value" id="ai-val">5.0</span>
+            </div>
+            <input type="range" id="ai-slider" class="slider-input" min="1" max="10" step="0.1" value="5">
+            <p class="slider-desc">İş süreçlerinde yapay zeka araçlarının kullanım sıklığı ve derinliği.</p>
+          </div>
+        </div>
+        
+        <div class="simulator-display">
+          <div class="result-metric">
+            <div class="metric-info">
+              <span class="metric-label">Hesaplanan</span>
+              <h3 class="metric-title">Toplam Etki (E)</h3>
+            </div>
+            <div class="metric-value-display" id="result-val">1.250</div>
+          </div>
+          
+          <div class="graph-container">
+            <svg class="graph-svg" viewBox="0 0 500 240">
+              <defs>
+                <!-- Line Gradient -->
+                <linearGradient id="graph-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="var(--violet)" />
+                  <stop offset="100%" stop-color="var(--gold)" />
+                </linearGradient>
+                <!-- Area Gradient -->
+                <linearGradient id="area-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="var(--violet)" stop-opacity="0.3" />
+                  <stop offset="100%" stop-color="var(--indigo)" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              
+              <!-- Grid lines -->
+              <line class="graph-grid" x1="40" y1="20" x2="460" y2="20" />
+              <line class="graph-grid" x1="40" y1="70" x2="460" y2="70" />
+              <line class="graph-grid" x1="40" y1="120" x2="460" y2="120" />
+              <line class="graph-grid" x1="40" y1="170" x2="460" y2="170" />
+              <line class="graph-grid" x1="40" y1="220" x2="460" y2="220" />
+              
+              <!-- Axis labels -->
+              <text class="graph-axis-label" x="40" y="235" text-anchor="middle">AI 1</text>
+              <text class="graph-axis-label" x="250" y="235" text-anchor="middle">AI 5.5</text>
+              <text class="graph-axis-label" x="460" y="235" text-anchor="middle">AI 10</text>
+              
+              <!-- Paths -->
+              <path id="graph-area" class="graph-area" d="" />
+              <path id="graph-line" class="graph-line" d="" />
+              
+              <!-- Interactive Dot -->
+              <circle id="graph-dot" class="graph-marker" r="7" cx="250" cy="120" filter="drop-shadow(0 0 8px var(--gold))" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM SECTION -->
+  <section class="themed-section section-bg-surface" id="problem">
+    <div class="container problem-grid">
+      <div class="sticky-col">
+        <span class="eyebrow">Gerçek</span>
+        <h2 class="section-heading">Sektörün<br>durumu<span>.</span></h2>
+      </div>
+      <div>
+        <div class="problem-list">
+          <div class="problem-item">Satış ekibiniz hâlâ eskisi gibi çalışıyor. AI onları beklemeyecek.</div>
+          <div class="problem-item">Liderlik programı aldınız. AI çağında liderlik etmeyi kimse öğretmedi.</div>
+          <div class="problem-item">Araç öğrendiler. Yetkinlik kazanmadılar.</div>
+          <div class="problem-item">Her yıl aynı eğitim bütçesi. Her yıl aynı sonuç.</div>
+          <div class="problem-item">AI toplantılarda konuşuluyor. Masada uygulanmıyor.</div>
+        </div>
+        <p class="problem-footer">Biz bu boşluğu kapatmak için varız.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BELIEFS SECTION -->
+  <section class="themed-section" id="beliefs">
+    <div class="container beliefs-grid">
+      <div class="sticky-col">
+        <span class="eyebrow">İnanmadıklarımız</span>
+        <h2 class="section-heading">Bazı şeyleri açıkça söylüyoruz.</h2>
+        <p style="color: var(--text-muted); line-height: 1.7;">Müşteri rahatsız oluyorsa doğru yoldayız.</p>
+      </div>
+      
+      <div>
+        <div class="beliefs-list">
+          <div class="belief-item">
+            <span class="belief-item-bullet">×</span>
+            <span>İki günlük eğitimle davranış değişmez.</span>
+          </div>
+          <div class="belief-item">
+            <span class="belief-item-bullet">×</span>
+            <span>"İnşallah bir şey kaldı" ölçüm değildir.</span>
+          </div>
+          <div class="belief-item">
+            <span class="belief-item-bullet">×</span>
+            <span>Araç öğrenmek yetkinlik değildir.</span>
+          </div>
+          <div class="belief-item">
+            <span class="belief-item-bullet">×</span>
+            <span>Katalogdan seçilen program fark yaratmaz.</span>
+          </div>
+        </div>
+        <div class="beliefs-quote">
+          <p class="beliefs-quote-text">
+            Bunları söylemek müşteriyi kaybettirebilir.<br>
+            Söylememeyi tercih etmiyoruz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH SECTION -->
+  <section class="themed-section section-bg-surface" id="approach">
+    <div class="container">
+      <div class="approach-header-grid">
+        <h2 class="section-heading" style="margin-bottom: 0;">Biz farklı<br>çalışıyoruz.</h2>
+        <p class="approach-desc">Masa başından değil, içeriden. Hazır paket yok. Her şey size özel tasarlanıyor ve ölçümle kapatılıyor.</p>
+      </div>
+      
+      <div class="approach-grid">
+        <div class="approach-card">
+          <div class="step-num">01</div>
+          <h3 class="step-title">Önce geliyoruz.</h3>
+          <p class="step-desc">Ekibinizi yerinde izliyoruz, yöneticilerinizle konuşuyoruz. Söylenen değil, olan gerçek sorunları buluyoruz.</p>
+        </div>
+        <div class="approach-card">
+          <div class="step-num">02</div>
+          <h3 class="step-title">Sonra tasarlıyoruz.</h3>
+          <p class="step-desc">Hazır katalog paketleri sunmuyoruz. Sorununuz kuruma özelse, eğitim programınız da kurumunuza özel tasarlanır.</p>
+        </div>
+        <div class="approach-card">
+          <div class="step-num">03</div>
+          <h3 class="step-title">İçine AI koyuyoruz.</h3>
+          <p class="step-desc">Satışta, liderlikte, müşteri hizmetlerinde — AI ayrı bir ders konusu değil, iş yapış biçiminizin tam göbeğinde yer alır.</p>
+        </div>
+        <div class="approach-card">
+          <div class="step-num">04</div>
+          <h3 class="step-title">Ölçüyoruz.</h3>
+          <p class="step-desc">Sayılarla. Program başlamadan önce ölçüyoruz, gelişim sürecini takip ediyoruz ve sonuçta etkiyi net olarak raporluyoruz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADEMY & STATS SECTION -->
+  <section class="themed-section">
+    <div class="container roademy-grid">
+      <div class="sticky-col">
+        <span class="eyebrow">Ölçüm Altyapısı</span>
+        <h2 class="section-heading">"İnşallah"<br>denmez.<br><span>Sayıyla.</span></h2>
+        <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 40px;">
+          Programlarımızın tamamı AI destekli yetkinlik değerlendirme altyapısıyla çalışır. Eğitim başlamadan önce ölçersiniz. Süreç boyunca izlersiniz. Program bitince rapor değil, aksiyon alırsınız.
+        </p>
+        
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-num">%94</div>
+            <div class="stat-label">Uygulama Oranı</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">4.2x</div>
+            <div class="stat-label">Yatırım Getirisi</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">12k+</div>
+            <div class="stat-label">Eğitilen Lider</div>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="features-list">
+          <div class="feature-item">
+            <h3 class="feature-title">Program öncesi: nerede durduğunuzu biliyoruz.</h3>
+            <p class="feature-desc">Çok boyutlu yetkinlik analizi. Eğitime başlamadan gerçek tablo ortaya çıkar. Katalogdan seçilmiş program değil — veriye dayalı tasarım.</p>
+          </div>
+          <div class="feature-item">
+            <h3 class="feature-title">Program içi: katılım değil, değişim ölçülür.</h3>
+            <p class="feature-desc">Her modülde gerçek zamanlı davranış verisi. Kim öğreniyor, kim uyguluyor, kim geride kalıyor — sayıyla görülür.</p>
+          </div>
+          <div class="feature-item">
+            <h3 class="feature-title">Program sonrası: ilişki bitmez.</h3>
+            <p class="feature-desc">Yetkinlik değişimi program bittikten sonra da takip edilir. Yönetim sunumu hazır. ROI hesabı sezgiye değil, veriye dayanır.</p>
+          </div>
+          <div class="feature-item">
+            <h3 class="feature-title">AI + insan kararı: rapor değil, aksiyon.</h3>
+            <p class="feature-desc">Sistem veri toplar, danışmanımız yorumlar. Rakam listesi değil — "Şimdi ne yapmalıyız?" sorusuna yanıt üretilir.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="themed-section section-bg-surface" id="cta">
+    <div class="container cta-grid">
+      <h2 class="cta-title">
+        Yetkinlik eğitimi aldınız.<br>
+        AI eğitimi aldınız.<br>
+        <span class="accent-gradient">İkisi hiç tanışmadı.</span>
+      </h2>
+      <div class="cta-right">
+        <p class="cta-desc">
+          Hazır program göndermiyoruz. Önce kurumunuzu ve hedeflerinizi anlıyoruz. Bizimle iletişime geçin, 24 saat içinde dönelim.
+        </p>
+        <a href="mailto:info@axiom.com.tr" class="btn btn-primary">Konuşalım →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-container">
+      <span class="footer-copy">AXIOM © 2026 — Artificial Intelligence. Real Competence.</span>
+      <ul class="footer-links">
+        <li><a href="kullanim-kosullari.html">Kullanım Koşulları</a></li>
+        <li><a href="gizlilik-politikasi.html">Gizlilik Politikası</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js?v=12"></script>
+</body>
+</html>

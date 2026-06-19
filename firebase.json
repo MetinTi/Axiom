@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "site": "axiom-competence",
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      ".firebaserc",
+      "AGENTS.md",
+      "**/.git/**",
+      "**/node_modules/**"
+    ]
+  }
+}

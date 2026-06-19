@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Axiom</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Contact Axiom. Fill out the form to get information about our custom AI & competency integration solutions for your organization.">
+  <meta name="keywords" content="axiom contact, AI training request, competency consultancy application">
+  <meta name="author" content="Axiom">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contact — Axiom">
+  <meta property="og:description" content="We don't send ready-made programs, first we understand you. Write to us, we will return within 24 hours.">
+  <meta property="og:type" content="website">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../index.css?v=10">
+</head>
+<body>
+
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon-wrapper">
+          <img src="../assets/axiom_logo.png" alt="Axiom Emblem" class="logo-icon-img">
+        </div>
+        <div class="logo-details">
+          <div class="logo-title"><span>A</span>X<span>I</span>OM</div>
+          <div class="logo-subtitle">Artificial Intelligence. Real Competence.</div>
+        </div>
+      </a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Manifesto</a></li>
+          <li><a href="programlar.html">Programs</a></li>
+          <li><a href="dna.html">DNA</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="iletisim.html" class="active">Contact</a></li>
+        </ul>
+        <div class="lang-switcher">
+          <a href="../iletisim.html" class="lang-link" title="Türkçe">🇹🇷 <span class="lang-label">TR</span></a>
+          <span class="lang-divider">|</span>
+          <a href="iletisim.html" class="lang-link active" title="English">🇬🇧 <span class="lang-label">EN</span></a>
+        </div>
+      </nav>
+      
+      <button class="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTACT CONTENT -->
+  <main class="themed-section" style="padding-top: calc(var(--header-height) + 60px); flex: 1;">
+    <div class="container contact-wrap">
+      
+      <!-- Left Column: Details -->
+      <div class="contact-left">
+        <span class="eyebrow">Contact</span>
+        <h1 class="contact-title text-gradient" style="font-size: clamp(48px, 6vw, 88px); font-weight: 800; line-height: 1.05; letter-spacing: -2px; margin-bottom: 32px;">Let's talk.</h1>
+        <p class="contact-promise" style="font-size: 17px; color: var(--text-muted); line-height: 1.8; margin-bottom: 60px;">
+          <strong>We don't send ready-made programs.</strong> First, we understand you. Fill out the form, we will return within 24 hours.
+        </p>
+        
+        <div class="contact-details">
+          <div class="contact-detail-item">
+            <span class="contact-detail-label">Email</span>
+            <span class="contact-detail-value"><a href="mailto:info@axiom.com.tr">info@axiom.com.tr</a></span>
+          </div>
+          <div class="contact-detail-item">
+            <span class="contact-detail-label">Location</span>
+            <span class="contact-detail-value">Istanbul, Turkey</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Column: Form -->
+      <div class="contact-right">
+        <div class="contact-right-box">
+          <h2 class="form-title">Write to us.</h2>
+          <form id="contact-form" onsubmit="event.preventDefault(); alert('Your message was successfully received! We will contact you as soon as possible.'); this.reset();">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Your Name</label>
+                <input type="text" class="form-input" placeholder="Name Surname" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Company</label>
+                <input type="text" class="form-input" placeholder="Company name" required>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-input" placeholder="example@company.com" required>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Which program are you interested in?</label>
+              <input type="text" class="form-input" placeholder="Sales × AI, Leadership × AI ..." required>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Your Message</label>
+              <textarea class="form-textarea" placeholder="Briefly describe your team. How many people, which sector, what problem do you want to solve?" required></textarea>
+            </div>
+            
+            <button type="submit" class="form-submit">Send →</button>
+            <p class="form-note">Your information is only used to contact you. It is never shared.</p>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-container">
+      <span class="footer-copy">AXIOM © 2026 — Artificial Intelligence. Real Competence.</span>
+      <ul class="footer-links">
+        <li><a href="terms-of-use.html">Terms of Use</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../app.js?v=12"></script>
+</body>
+</html>

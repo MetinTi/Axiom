@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axiom — AI & Competency Integration</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Axiom integrates artificial intelligence into your organization's business processes to build real competencies. Turn your training budget into concrete business results.">
+  <meta name="keywords" content="artificial intelligence, corporate training, competency development, AI integration, sales training, leadership training, competency measurement">
+  <meta name="author" content="Axiom">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Axiom — AI & Competency Integration">
+  <meta property="og:description" content="We do not teach tools. We build competency. Training models that combine AI with behavior change and business results.">
+  <meta property="og:type" content="website">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../index.css?v=10">
+</head>
+<body>
+
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <div class="logo-icon-wrapper">
+          <img src="../assets/axiom_logo.png" alt="Axiom Emblem" class="logo-icon-img">
+        </div>
+        <div class="logo-details">
+          <div class="logo-title"><span>A</span>X<span>I</span>OM</div>
+          <div class="logo-subtitle">Artificial Intelligence. Real Competence.</div>
+        </div>
+      </a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="active">Manifesto</a></li>
+          <li><a href="programlar.html">Programs</a></li>
+          <li><a href="dna.html">DNA</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="iletisim.html">Contact</a></li>
+        </ul>
+        <div class="lang-switcher">
+          <a href="../index.html" class="lang-link" title="Türkçe">🇹🇷 <span class="lang-label">TR</span></a>
+          <span class="lang-divider">|</span>
+          <a href="index.html" class="lang-link active" title="English">🇬🇧 <span class="lang-label">EN</span></a>
+        </div>
+      </nav>
+      
+      <button class="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-left fade-in">
+        <div class="corvis-bot-wrapper">
+          <!-- Robot Visual Area -->
+          <div class="corvis-robot-container state-idle" id="corvis-robot">
+            <!-- Concentric Radial Ambient Glow -->
+            <div class="corvis-ambient-glow" id="corvis-glow"></div>
+            
+            <!-- Outer Orbit HUD Ring 1 -->
+            <svg class="corvis-hud-ring ring-1" viewBox="0 0 200 200">
+              <circle cx="100" cy="100" r="92" fill="none" stroke="#FFE500" stroke-width="1" stroke-dasharray="6, 8, 40, 8, 12, 16" />
+              <text class="corvis-hud-text">
+                <textPath href="#orbitPath" startOffset="10%">
+                  SYS.CORTEX.ONLINE // LATENCY.NIL // STAT_OK
+                </textPath>
+              </text>
+              <path id="orbitPath" d="M 12,100 A 88,88 0 1,1 188,100" fill="none" />
+            </svg>
+            
+            <!-- Outer Orbit HUD Ring 2 -->
+            <svg class="corvis-hud-ring ring-2" viewBox="0 0 200 200">
+              <circle cx="100" cy="100" r="82" fill="none" stroke="#FFE500" stroke-width="0.5" stroke-dasharray="2, 6, 12, 6" />
+              <circle cx="100" cy="18" r="2.5" fill="#FFE500" class="ping-marker" />
+              <circle cx="100" cy="18" r="1.5" fill="#FFE500" />
+              <circle cx="100" cy="182" r="2.5" fill="#A855F7" class="pulse-marker" />
+              <circle cx="100" cy="182" r="1.5" fill="#A855F7" />
+              <circle cx="18" cy="100" r="2" fill="#FFE500" class="pulse-marker" />
+              <circle cx="182" cy="100" r="2" fill="#FFE500" class="pulse-marker" />
+            </svg>
+            
+            <!-- Central Robot Face SVG -->
+            <div class="corvis-face-wrapper" id="corvis-face">
+              <svg class="corvis-face-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="chassisMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#1b1608" />
+                    <stop offset="25%" stop-color="#2f2612" />
+                    <stop offset="50%" stop-color="#3d321a" />
+                    <stop offset="75%" stop-color="#211a0a" />
+                    <stop offset="100%" stop-color="#120e05" />
+                  </linearGradient>
+                  <linearGradient id="glossHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#FFE500" stop-opacity="0.4" />
+                    <stop offset="40%" stop-color="#FFE500" stop-opacity="0.1" />
+                    <stop offset="100%" stop-color="transparent" stop-opacity="0" />
+                  </linearGradient>
+                  <linearGradient id="neonCircuit" x1="0%" y1="0%" x2="100%" y2="50%">
+                    <stop offset="0%" stop-color="#FFE500" />
+                    <stop offset="50%" stop-color="#FF9F00" />
+                    <stop offset="100%" stop-color="#A855F7" />
+                  </linearGradient>
+                  <radialGradient id="darkUnderplate" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#121008" />
+                    <stop offset="70%" stop-color="#090804" />
+                    <stop offset="100%" stop-color="#030201" />
+                  </radialGradient>
+                  <radialGradient id="opticRetina" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#ffffff" />
+                    <stop offset="25%" stop-color="#FFE500" />
+                    <stop offset="65%" stop-color="#A07000" stop-opacity="0.9" />
+                    <stop offset="100%" stop-color="#181302" stop-opacity="0" />
+                  </radialGradient>
+                  <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="1.5" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                  </filter>
+                </defs>
+                
+                <!-- Left Ear -->
+                <g transform="translate(21, 48)">
+                  <path d="M 0,-8 L -4,-6 L -4,6 L 0,8 Z" fill="#120e05" stroke="#2f2612" stroke-width="0.8" />
+                  <ellipse cx="-4" cy="0" rx="3" ry="8" fill="#211a0a" stroke="#FFE500" stroke-width="0.8" />
+                  <ellipse cx="-4" cy="0" rx="1.5" ry="4.5" fill="#120e05" stroke="#FFE500" stroke-width="0.5" stroke-dasharray="1 1" />
+                  <line x1="-4" y1="0" x2="-4" y2="-4.5" stroke="#FFE500" stroke-width="0.5" opacity="0.8" />
+                  <line x1="-4" y1="0" x2="-5.5" y2="2.5" stroke="#FFE500" stroke-width="0.5" opacity="0.8" />
+                  <line x1="-4" y1="0" x2="-2.5" y2="2.5" stroke="#FFE500" stroke-width="0.5" opacity="0.8" />
+                </g>
+                
+                <!-- Right Ear -->
+                <g transform="translate(79, 48)">
+                  <path d="M 0,-8 L 4,-6 L 4,6 L 0,8 Z" fill="#120e05" stroke="#2f2612" stroke-width="0.8" />
+                  <ellipse cx="4" cy="0" rx="3" ry="8" fill="#211a0a" stroke="#FFE500" stroke-width="0.8" />
+                  <ellipse cx="4" cy="0" rx="1.5" ry="4.5" fill="#120e05" stroke="#FFE500" stroke-width="0.5" stroke-dasharray="1 1" />
+                  <line x1="4" y1="0" x2="4" y2="-4.5" stroke="#FFE500" stroke-width="0.5" opacity="0.8" />
+                  <line x1="4" y1="0" x2="2.5" y2="2.5" stroke="#FFE500" stroke-width="0.5" opacity="0.8" />
+                  <line x1="4" y1="0" x2="5.5" y2="2.5" stroke="#FFE500" stroke-width="0.5" opacity="0.8" />
+                </g>
+                
+                <!-- Deep Core Inner Head Silhouette -->
+                <path d="M30,12 C30,12 40,6 50,6 C60,6 70,12 70,12 C76,22 79,35 79,48 C79,64 73,77 66,84 C59,91 50,93 50,93 C50,93 41,91 34,84 C27,77 21,64 21,48 C21,35 24,22 30,12 Z" fill="url(#darkUnderplate)" stroke="#292111" stroke-width="1.5" />
+                
+                <!-- Outer Armor Plating -->
+                <path class="chassis-plating" d="M31,13 C31,13 40,7.5 50,7.5 C60,7.5 69,13 69,13 C74.5,22.5 77,34.5 77,48 C77,62.5 71.5,74.5 65,81.5 C59,88.5 50,90.5 50,90.5 C50,90.5 41,88.5 35,81.5 C28.5,74.5 23,62.5 23,48 C23,34.5 25.5,22.5 31,13 Z" fill="url(#chassisMetallic)" stroke="url(#neonCircuit)" stroke-width="1" />
+                
+                <!-- Glossy Reflections -->
+                <path d="M31,13 C31,13 40,7.5 50,7.5 C60,7.5 69,13 69,13 C72,20 74,28 74,38 C60,35 40,35 26,38 C26,28 28,20 31,13 Z" fill="url(#glossHighlight)" opacity="0.7" />
+                
+                <!-- Brain Cortex Micro-Circuits -->
+                <g opacity="0.8">
+                  <line x1="50" y1="12" x2="50" y2="24" stroke="#FFE500" stroke-width="0.8" />
+                  <circle cx="50" cy="18" r="1" fill="#fff" filter="url(#glowFilter)" />
+                  <path d="M50,14 C44,14 40,16 38,20 M50,14 C56,14 60,16 62,20 M50,21 C45,21 42,23 39,26 L35,26 M50,21 C55,21 58,23 61,26 L65,26" stroke="#FFE500" stroke-width="0.6" stroke-linecap="round" />
+                  <circle cx="38" cy="20" r="0.7" fill="#FFE500" />
+                  <circle cx="62" cy="20" r="0.7" fill="#FFE500" />
+                  <circle cx="35" cy="26" r="0.7" fill="#A855F7" />
+                  <circle cx="65" cy="26" r="0.7" fill="#A855F7" />
+                </g>
+                
+                <!-- Forehead Hexagonal Neural AI Microchip Core -->
+                <g transform="translate(50, 24)">
+                  <polygon points="-8,-4 8,-4 12,0 8,4 -8,4 -12,0" fill="#020c15" stroke="#FFE500" stroke-width="0.8" filter="url(#glowFilter)" />
+                  <text font-family="monospace" font-size="4.5" font-weight="bold" fill="#FFE500" text-anchor="middle" y="1.5" class="chip-text">AXIS</text>
+                  <path d="M-12,0 L-18,-4 M12,0 L18,-4 M0,-4 L0,-9" stroke="#FFE500" stroke-width="0.5" opacity="0.7" />
+                </g>
+                
+                <!-- Dual Holographic Eye Optics -->
+                <!-- Left Eye -->
+                <g transform="translate(36, 45)">
+                  <ellipse cx="0" cy="0" rx="9.5" ry="6.5" fill="#131003" stroke="#3d3312" stroke-width="0.8" />
+                  <circle class="aperture-ring" cx="0" cy="0" r="5" stroke="#FF9F00" stroke-width="0.5" stroke-dasharray="1.5 1" />
+                  <circle cx="0" cy="0" r="3.5" fill="url(#opticRetina)" filter="url(#glowFilter)" />
+                  <circle cx="0" cy="0" r="1" fill="#ffffff" />
+                  <path d="M-8,5 L-11,8 M8,5 L11,8" stroke="#FFE500" stroke-width="0.4" opacity="0.5" />
+                </g>
+                <!-- Right Eye -->
+                <g transform="translate(64, 45)">
+                  <ellipse cx="0" cy="0" rx="9.5" ry="6.5" fill="#131003" stroke="#3d3312" stroke-width="0.8" />
+                  <circle class="aperture-ring" cx="0" cy="0" r="5" stroke="#FF9F00" stroke-width="0.5" stroke-dasharray="1.5 1" />
+                  <circle cx="0" cy="0" r="3.5" fill="url(#opticRetina)" filter="url(#glowFilter)" />
+                  <circle cx="0" cy="0" r="1" fill="#ffffff" />
+                  <path d="M-8,5 L-11,8 M8,5 L11,8" stroke="#FFE500" stroke-width="0.4" opacity="0.5" />
+                </g>
+                
+                <!-- Temple Synaptic Status Nodes -->
+                <circle cx="21" cy="45" r="2.5" fill="#FFE500" class="ping-marker" />
+                <circle cx="21" cy="45" r="1.5" fill="#FFE500" />
+                <circle cx="79" cy="45" r="2.5" fill="#FFE500" class="ping-marker" />
+                <circle cx="79" cy="45" r="1.5" fill="#FFE500" />
+                
+                <!-- Noseplate Contours -->
+                <path d="M48,53 L50,56 L52,53 M50,38 L50,56" stroke="#FFE500" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8" />
+                
+                <!-- Cheek Circuits -->
+                <path d="M26,52 C26,52 30,58 35,62 M74,52 C74,52 70,58 65,62" stroke="#FFE500" stroke-width="0.6" stroke-linecap="round" opacity="0.5" />
+                <path d="M32,58 L28,64 L28,70 M68,58 L72,64 L72,70" stroke="#FFE500" stroke-width="0.5" stroke-linecap="round" opacity="0.7" />
+                <circle cx="28" cy="70" r="0.8" fill="#FFE500" />
+                <circle cx="72" cy="70" r="0.8" fill="#FFE500" />
+                
+                <!-- Cyber Mouth Sensor Arrays -->
+                <g transform="translate(50, 68)" class="corvis-mouth-group">
+                  <rect x="-12" y="-1.5" width="24" height="3" rx="1.5" fill="#060501" stroke="#A07000" stroke-width="0.8" />
+                  <line class="mouth-line" x1="-10" y1="0" x2="10" y2="0" stroke="#A07000" stroke-width="0.8" />
+                </g>
+                
+                <!-- Heavy Tech Ventilation Grill -->
+                <path d="M33,74 L38,79 M36,76 L41,81 M67,74 L62,79 M64,76 L59,81" stroke="#FFE500" stroke-width="1" stroke-linecap="round" opacity="0.4" />
+                
+                <!-- Chin structural lock indicator -->
+                <rect x="47" y="80" width="6" height="5" rx="1" fill="#060501" stroke="url(#neonCircuit)" stroke-width="0.8" />
+                <circle cx="50" cy="82.5" r="1.2" fill="#FFE500" class="pulse-marker" />
+                
+                <!-- Foreground Beacon light point -->
+                <circle class="beacon-light" cx="50" cy="7.5" r="1.5" fill="#FFE500" />
+              </svg>
+            </div>
+          </div>
+          
+          <!-- Chat Console Area -->
+          <div class="corvis-chat-container">
+            <div class="corvis-chat-header">
+              <div class="status-dot"></div>
+              <span class="status-text">AXIS v9.12 ONLINE</span>
+            </div>
+            <div class="corvis-chat-messages" id="corvis-messages">
+              <!-- Welcome message -->
+              <div class="chat-message bot">
+                <div class="message-content">
+                  Hello! I am Axis, Axiom's AI assistant. You can ask me anything about Axiom platform, our programs, or our founders.
+                </div>
+              </div>
+            </div>
+            <div class="corvis-quick-replies" id="corvis-replies">
+              <button class="quick-reply-btn" data-question="What is Axiom?">What is Axiom?</button>
+              <button class="quick-reply-btn" data-question="Programs">Programs</button>
+              <button class="quick-reply-btn" data-question="Team / DNA">Team / DNA</button>
+              <button class="quick-reply-btn" data-question="Contact">Contact</button>
+            </div>
+            <form class="corvis-chat-form" id="corvis-form">
+              <input type="text" class="corvis-chat-input" id="corvis-input" placeholder="Type your question here..." autocomplete="off" required />
+              <button type="submit" class="corvis-chat-submit" aria-label="Send">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="send-icon">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-content fade-in" style="animation-delay: 0.2s;">
+        <span class="eyebrow">Axiom AI & Competency Platform</span>
+        <h1 class="hero-title text-gradient">
+          WE DO NOT TEACH TOOLS.<br>
+          WE BUILD COMPETENCY.
+        </h1>
+        <p class="hero-subtitle">
+          Shape the future of your organization with Axiom. A data-driven training and development platform that turns AI capabilities into strategic advantage.
+        </p>
+        <div class="hero-actions">
+          <a href="programlar.html" class="btn btn-primary">Start Now</a>
+          <a href="iletisim.html" class="btn btn-secondary">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO STATEMENTS STRIP -->
+  <section class="statements-strip">
+    <div class="container statements-grid">
+      <div class="statement-card">
+        <span class="statement-num">01</span>
+        <p class="statement-text">Measurement begins before training ends.</p>
+      </div>
+      <div class="statement-card">
+        <span class="statement-num">02</span>
+        <p class="statement-text">AI is inside every module. Not a separate course.</p>
+      </div>
+      <div class="statement-card">
+        <span class="statement-num">03</span>
+        <p class="statement-text">The relationship doesn't end when the program finishes.</p>
+      </div>
+      <div class="statement-card">
+        <span class="statement-num">04</span>
+        <p class="statement-text">No "hopefully". We speak with numbers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY / FORMULA SECTION -->
+  <section class="themed-section section-bg-surface" id="formula">
+    <div class="container formula-grid">
+      <div class="formula-display">
+        <span class="eyebrow">Methodology</span>
+        <div class="formula-math">
+          <span class="math-accent">E</span>
+          <span class="math-operator">=</span>
+          <span>Y</span>
+          <span class="math-operator">×</span>
+          <span class="math-sup-wrapper">
+            <span class="math-accent">AI</span>
+            <span class="math-sup">2</span>
+          </span>
+        </div>
+        <p class="formula-sub">Forgive us, Einstein. E = mc² was for physics. This formula is for business.</p>
+        <p class="formula-statement">
+          You took competency training. You took AI training.<br>
+          They never met in the same equation.<br><br>
+          <strong>We build that equation.</strong>
+        </p>
+      </div>
+      
+      <div class="formula-right">
+        <div class="variables-list">
+          <div class="variable-card">
+            <div class="variable-symbol">E</div>
+            <div class="variable-info">
+              <h3 class="variable-name">Impact</h3>
+              <p class="variable-desc">The actual business result you produce in sales, leadership, and customer service.</p>
+            </div>
+          </div>
+          <div class="variable-card">
+            <div class="variable-symbol">Y</div>
+            <div class="variable-info">
+              <h3 class="variable-name">Competency</h3>
+              <p class="variable-desc">What your team does under pressure. Real capacity and behavior pattern.</p>
+            </div>
+          </div>
+          <div class="variable-card">
+            <div class="variable-symbol">AI²</div>
+            <div class="variable-info">
+              <h3 class="variable-name">AI Squared</h3>
+              <p class="variable-desc">If you double AI integration, the impact generated quadruples. However, if competency (Y) is zero, the result of the formula is also zero.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE SIMULATOR SECTION -->
+  <section class="themed-section" id="simulator">
+    <div class="container">
+      <span class="eyebrow" style="margin-bottom: 40px;">Simulator</span>
+      <div class="simulator-layout">
+        <div class="simulator-controls">
+          <h2 class="section-heading" style="font-size: 28px; margin-bottom: 0;">Calculate the Impact Factor</h2>
+          
+          <div class="slider-group">
+            <div class="slider-header">
+              <span class="slider-title">Team Competency Level (Y)</span>
+              <span class="slider-value" id="yetkinlik-val">50</span>
+            </div>
+            <input type="range" id="yetkinlik-slider" class="slider-input" min="0" max="100" value="50">
+            <p class="slider-desc">Behavioral maturity, communication, problem solving, and leadership capacity.</p>
+          </div>
+          
+          <div class="slider-group">
+            <div class="slider-header">
+              <span class="slider-title">AI Integration (AI)</span>
+              <span class="slider-value" id="ai-val">5.0</span>
+            </div>
+            <input type="range" id="ai-slider" class="slider-input" min="1" max="10" step="0.1" value="5">
+            <p class="slider-desc">Frequency and depth of using AI tools in business processes.</p>
+          </div>
+        </div>
+        
+        <div class="simulator-display">
+          <div class="result-metric">
+            <div class="metric-info">
+              <span class="metric-label">Calculated</span>
+              <h3 class="metric-title">Total Impact (E)</h3>
+            </div>
+            <div class="metric-value-display" id="result-val">1.250</div>
+          </div>
+          
+          <div class="graph-container">
+            <svg class="graph-svg" viewBox="0 0 500 240">
+              <defs>
+                <!-- Line Gradient -->
+                <linearGradient id="graph-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="var(--violet)" />
+                  <stop offset="100%" stop-color="var(--gold)" />
+                </linearGradient>
+                <!-- Area Gradient -->
+                <linearGradient id="area-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="var(--violet)" stop-opacity="0.3" />
+                  <stop offset="100%" stop-color="var(--indigo)" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              
+              <!-- Grid lines -->
+              <line class="graph-grid" x1="40" y1="20" x2="460" y2="20" />
+              <line class="graph-grid" x1="40" y1="70" x2="460" y2="70" />
+              <line class="graph-grid" x1="40" y1="120" x2="460" y2="120" />
+              <line class="graph-grid" x1="40" y1="170" x2="460" y2="170" />
+              <line class="graph-grid" x1="40" y1="220" x2="460" y2="220" />
+              
+              <!-- Axis labels -->
+              <text class="graph-axis-label" x="40" y="235" text-anchor="middle">AI 1</text>
+              <text class="graph-axis-label" x="250" y="235" text-anchor="middle">AI 5.5</text>
+              <text class="graph-axis-label" x="460" y="235" text-anchor="middle">AI 10</text>
+              
+              <!-- Paths -->
+              <path id="graph-area" class="graph-area" d="" />
+              <path id="graph-line" class="graph-line" d="" />
+              
+              <!-- Interactive Dot -->
+              <circle id="graph-dot" class="graph-marker" r="7" cx="250" cy="120" filter="drop-shadow(0 0 8px var(--gold))" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM SECTION -->
+  <section class="themed-section section-bg-surface" id="problem">
+    <div class="container problem-grid">
+      <div class="sticky-col">
+        <span class="eyebrow">Reality</span>
+        <h2 class="section-heading">State of the<br>industry<span>.</span></h2>
+      </div>
+      <div>
+        <div class="problem-list">
+          <div class="problem-item">Your sales team is still working the old way. AI won't wait for them.</div>
+          <div class="problem-item">You took a leadership program. Nobody taught you how to lead in the AI era.</div>
+          <div class="problem-item">They learned tools. They didn't gain competency.</div>
+          <div class="problem-item">Same training budget every year. Same result every year.</div>
+          <div class="problem-item">AI is discussed in meetings. It is not applied at the desk.</div>
+        </div>
+        <p class="problem-footer">We exist to bridge this gap.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BELIEFS SECTION -->
+  <section class="themed-section" id="beliefs">
+    <div class="container beliefs-grid">
+      <div class="sticky-col">
+        <span class="eyebrow">What We Don't Believe In</span>
+        <h2 class="section-heading">We state some things clearly.</h2>
+        <p style="color: var(--text-muted); line-height: 1.7;">If the client is uncomfortable, we are on the right track.</p>
+      </div>
+      
+      <div>
+        <div class="beliefs-list">
+          <div class="belief-item">
+            <span class="belief-item-bullet">×</span>
+            <span>Behavior does not change with a two-day training.</span>
+          </div>
+          <div class="belief-item">
+            <span class="belief-item-bullet">×</span>
+            <span>"Hopefully something stuck" is not measurement.</span>
+          </div>
+          <div class="belief-item">
+            <span class="belief-item-bullet">×</span>
+            <span>Learning tools is not competency.</span>
+          </div>
+          <div class="belief-item">
+            <span class="belief-item-bullet">×</span>
+            <span>A program selected from a catalog doesn't make a difference.</span>
+          </div>
+        </div>
+        <div class="beliefs-quote">
+          <p class="beliefs-quote-text">
+            Saying these might lose the client.<br>
+            We choose to say them anyway.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH SECTION -->
+  <section class="themed-section section-bg-surface" id="approach">
+    <div class="container">
+      <div class="approach-header-grid">
+        <h2 class="section-heading" style="margin-bottom: 0;">We work<br>differently.</h2>
+        <p class="approach-desc">Not from the desk, but from within. No ready-made packages. Everything is customized for you and closed with measurement.</p>
+      </div>
+      
+      <div class="approach-grid">
+        <div class="approach-card">
+          <div class="step-num">01</div>
+          <h3 class="step-title">First, we observe.</h3>
+          <p class="step-desc">We shadow your team on-site, talk to your managers. We find the real problems occurring, not just the reported ones.</p>
+        </div>
+        <div class="approach-card">
+          <div class="step-num">02</div>
+          <h3 class="step-title">Then, we design.</h3>
+          <p class="step-desc">We do not offer ready-made catalog packages. If your problem is unique to your organization, your training program is customized for you.</p>
+        </div>
+        <div class="approach-card">
+          <div class="step-num">03</div>
+          <h3 class="step-title">We integrate AI.</h3>
+          <p class="step-desc">In sales, leadership, customer service — AI is not a separate course subject; it sits right at the core of how you do business.</p>
+        </div>
+        <div class="approach-card">
+          <div class="step-num">04</div>
+          <h3 class="step-title">We measure.</h3>
+          <p class="step-desc">With numbers. We measure before the program starts, track progress throughout, and clearly report the final impact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADEMY & STATS SECTION -->
+  <section class="themed-section">
+    <div class="container roademy-grid">
+      <div class="sticky-col">
+        <span class="eyebrow">Measurement Infrastructure</span>
+        <h2 class="section-heading">No "hopefully".<br>With numbers.</h2>
+        <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 40px;">
+          All of our programs run on an AI-powered competency evaluation infrastructure. You measure before training starts, monitor throughout the process, and take action rather than receiving a report at the end.
+        </p>
+        
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-num">%94</div>
+            <div class="stat-label">Application Rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">4.2x</div>
+            <div class="stat-label">Return on Investment</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">12k+</div>
+            <div class="stat-label">Leaders Trained</div>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="features-list">
+          <div class="feature-item">
+            <h3 class="feature-title">Before the program: we know where you stand.</h3>
+            <p class="feature-desc">Multi-dimensional competency analysis. The real picture emerges before starting. Not a catalog-selected program — data-driven design.</p>
+          </div>
+          <div class="feature-item">
+            <h3 class="feature-title">During the program: change, not attendance, is measured.</h3>
+            <p class="feature-desc">Real-time behavioral data in every module. Who is learning, who is applying, who is lagging behind — visible with numbers.</p>
+          </div>
+          <div class="feature-item">
+            <h3 class="feature-title">After the program: the relationship doesn't end.</h3>
+            <p class="feature-desc">Competency change is tracked even after the program ends. Executive presentation is ready. ROI calculation is based on data, not intuition.</p>
+          </div>
+          <div class="feature-item">
+            <h3 class="feature-title">AI + human decision: action, not report.</h3>
+            <p class="feature-desc">The system collects data, our consultant interprets it. Not a list of numbers — an answer to the question "What should we do now?" is generated.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="themed-section section-bg-surface" id="cta">
+    <div class="container cta-grid">
+      <h2 class="cta-title">
+        You took competency training.<br>
+        You took AI training.<br>
+        <span class="accent-gradient">They never met.</span>
+      </h2>
+      <div class="cta-right">
+        <p class="cta-desc">
+          We don't send ready-made programs. First, we understand your organization and goals. Contact us, we will get back to you within 24 hours.
+        </p>
+        <a href="iletisim.html" class="btn btn-primary">Let's Talk →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-container">
+      <span class="footer-copy">AXIOM © 2026 — Artificial Intelligence. Real Competence.</span>
+      <ul class="footer-links">
+        <li><a href="terms-of-use.html">Terms of Use</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../app.js?v=12"></script>
+</body>
+</html>
