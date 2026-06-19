@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Size Özel Yapay Zeka Eğitim İçeriği Oluşturun — Axiom</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Axiom interaktif müfredat oluşturucu ile kendi yapay zeka eğitim programınızı tasarlayın. Modülleri seçin, sürükleyin ve anında süre hesaplayın.">
+  <meta name="keywords" content="yapay zeka müfredat oluşturucu, özel yapay zeka eğitimi, drag and drop egitim, axiom yapay zeka">
+  <meta name="author" content="Axiom">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="index.css?v=10">
+
+  <style>
+    /* Builder Specific Premium Styles */
+    .builder-container {
+      display: grid;
+      grid-template-columns: minmax(0, 2.4fr) minmax(320px, 1fr);
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 1024px) {
+      .builder-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .panel-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      flex-direction: column;
+      height: 750px;
+    }
+
+    .panel-box.right-panel {
+      height: auto;
+      max-height: 850px;
+      position: sticky;
+      top: 110px;
+    }
+
+    .panel-title {
+      font-size: 22px;
+      color: var(--text);
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+
+    /* Category Filters */
+    .category-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scrollbar-width: thin;
+    }
+
+    .category-tabs::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: var(--transition-fast);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .tab-btn:hover, .tab-btn.active {
+      border-color: var(--gold);
+      color: var(--text);
+      background: var(--gold-glow);
+    }
+
+    /* Module List & Cards */
+    .scroll-list {
+      flex: 1;
+      overflow-y: auto;
+      padding-right: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .module-card {
+      background: var(--surface-solid);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      cursor: grab;
+      position: relative;
+      transition: var(--transition-fast);
+      user-select: none;
+    }
+
+    .module-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 0 15px var(--border-glow);
+      transform: translateY(-2px);
+    }
+
+    .module-card:active {
+      cursor: grabbing;
+    }
+
+    .module-card.dragging {
+      opacity: 0.4;
+      border: 1px dashed var(--gold);
+    }
+
+    .module-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .module-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .module-duration {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold);
+      background: var(--gold-glow);
+      padding: 2px 8px;
+      white-space: nowrap;
+    }
+
+    .module-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .module-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+
+    .action-btn {
+      background: var(--gold-glow);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: 800;
+      transition: var(--transition-fast);
+      box-shadow: 0 0 10px var(--gold-glow);
+    }
+
+    .action-btn:hover {
+      background: var(--gold);
+      color: hsl(240, 36%, 3%);
+      box-shadow: 0 0 15px var(--gold);
+      transform: scale(1.1);
+    }
+
+    /* Dropzone Area */
+    .dropzone {
+      background: rgba(255, 255, 255, 0.01);
+      border: 2px dashed var(--border);
+      border-radius: 12px;
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 16px;
+      transition: var(--transition-fast);
+    }
+
+    .dropzone.drag-over {
+      border-color: var(--gold);
+      background: var(--gold-glow);
+    }
+
+    .drop-placeholder {
+      margin: auto;
+      text-align: center;
+      color: var(--text-dark);
+      font-size: 14px;
+      max-width: 250px;
+      pointer-events: none;
+      line-height: 1.5;
+    }
+
+    /* Selected List Card */
+    .selected-card {
+      background: var(--surface-solid);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: grab;
+      transition: var(--transition-fast);
+    }
+
+    .selected-card:hover {
+      border-color: var(--gold);
+    }
+
+    .selected-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .selected-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .selected-meta {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .selected-index {
+      font-size: 12px;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .remove-btn {
+      background: transparent;
+      border: none;
+      color: #ff5555;
+      cursor: pointer;
+      font-size: 18px;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-fast);
+    }
+
+    .remove-btn:hover {
+      transform: scale(1.2);
+    }
+
+    /* Template buttons */
+    .template-btn {
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* Summary bar */
+    .summary-section {
+      background: var(--surface-solid);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .summary-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .summary-label {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .summary-val {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--gold);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Form Styles */
+    .builder-form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .form-group-builder {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-input-builder {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 14px;
+      font-size: 14px;
+      width: 100%;
+      outline: none;
+      font-family: 'Inter', sans-serif;
+      transition: var(--transition-fast);
+    }
+
+    .form-input-builder:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 10px var(--gold-glow);
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/axiom_logo.png">
+</head>
+<body>
+
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon-wrapper">
+          <img src="assets/axiom_logo.png" alt="Axiom Emblem" class="logo-icon-img">
+        </div>
+        <div class="logo-details">
+          <div class="logo-title"><span>A</span>X<span>I</span>OM</div>
+          <div class="logo-subtitle">Artificial Intelligence. Real Competence.</div>
+        </div>
+      </a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Manifesto</a></li>
+          <li><a href="programlar.html" class="active">Programlar</a></li>
+          <li><a href="dna.html">DNA</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+        <div class="lang-switcher">
+          <a href="yapay-zeka-egitimi.html" class="lang-link active" title="Türkçe">🇹🇷 <span class="lang-label">TR</span></a>
+          <span class="lang-divider">|</span>
+          <a href="en/yapay-zeka-egitimi.html" class="lang-link" title="English">🇬🇧 <span class="lang-label">EN</span></a>
+        </div>
+      </nav>
+      
+      <button class="hamburger" aria-label="Menü">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main class="themed-section" style="padding-top: calc(var(--header-height) + 40px); min-height: 100vh;">
+    <div class="container">
+      
+      <!-- Top Title and Description -->
+      <div style="text-align: center; max-width: 800px; margin: 0 auto 40px auto;">
+        <span class="eyebrow" style="justify-content: center; margin-bottom: 16px;">Size Özel Program</span>
+        <h1 class="text-gradient" style="font-size: clamp(32px, 4vw, 56px); margin-bottom: 20px; line-height: 1.1;">Size Özel Yapay Zeka Eğitim İçeriği Oluşturun.</h1>
+        <p style="color: var(--text-muted); font-size: clamp(15px, 1.3vw, 18px); line-height: 1.6;">
+          Eğitim müfredatımızdaki modülleri inceleyin, sürükleyip sağ taraftaki programınıza bırakarak firmanıza en uygun eğitim akışını oluşturun. Toplam gün ve saat anında güncellenecektir.
+        </p>
+      </div>
+
+      <!-- Quick Template Loaders -->
+      <div style="display: flex; gap: 12px; justify-content: center; margin-bottom: 30px; flex-wrap: wrap;">
+        <button class="btn btn-secondary template-btn" id="load-template-1">1. Paket: Giriş Eğitimi (5 sa)</button>
+        <button class="btn btn-secondary template-btn" id="load-template-2">2. Paket: Uygulamalı Eğitim (10 sa)</button>
+        <button class="btn btn-secondary template-btn" id="load-template-3">3. Paket: Kapsamlı Eğitim (25 sa)</button>
+        <button class="btn btn-secondary template-btn" id="clear-program" style="border-color: rgba(255, 85, 85, 0.4); color: #ff5555; background: rgba(255, 0, 0, 0.02);">Temizle</button>
+      </div>
+
+      <!-- The Core Workspace Grid -->
+      <div class="builder-container">
+        
+        <!-- Left: Modules Pool -->
+        <div class="panel-box">
+          <div class="panel-title">
+            <span>Modüller Havuzu</span>
+            <span style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Toplam 37 Modül + 4 Opsiyon</span>
+          </div>
+
+          <!-- Category Filters Tab -->
+          <div class="category-tabs" id="cat-tabs">
+            <button class="tab-btn active" data-cat="all">Hepsi</button>
+            <button class="tab-btn" data-cat="giris">Giriş & LLM</button>
+            <button class="tab-btn" data-cat="mldl">ML & Teknik YZ</button>
+            <button class="tab-btn" data-cat="veri_hukuk">Veri & Hukuk & Etik</button>
+            <button class="tab-btn" data-cat="yazarici">Yaratıcı & Tasarım</button>
+            <button class="tab-btn" data-cat="strateji">Sektör & Proje</button>
+            <button class="tab-btn" data-cat="opsiyonel">Opsiyonel Genişletmeler</button>
+          </div>
+
+          <!-- Modules Cards List (Draggable Pool) -->
+          <div class="scroll-list" id="modules-pool">
+            <!-- JS will populate -->
+          </div>
+        </div>
+
+        <!-- Right: Custom Selection List & Form -->
+        <div class="panel-box right-panel">
+          <div class="panel-title">
+            <span>Sizin Eğitim Programınız</span>
+            <span style="font-size: 11px; color: var(--gold); text-transform: uppercase;">Bırakma & Sıralama Alanı</span>
+          </div>
+
+          <!-- Dropzone and Selected List -->
+          <div class="dropzone" id="program-list">
+            <div class="drop-placeholder">
+              Modülleri buraya sürükleyip bırakın veya modüllerin yanındaki (+) butonuna basarak listenize ekleyin. Sürükleyerek sırasını değiştirebilirsiniz.
+            </div>
+          </div>
+
+          <!-- Duration Summary -->
+          <div class="summary-section">
+            <div class="summary-row">
+              <span class="summary-label">Toplam Süre:</span>
+              <span class="summary-val" id="summary-hours">0 Saat</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Toplam Eğitim Günü:</span>
+              <span class="summary-val" id="summary-days">0 Gün</span>
+            </div>
+            <div style="font-size: 11px; color: var(--text-dark); margin-top: 12px; border-top: 1px solid var(--border); padding-top: 8px; line-height: 1.4;">
+              * Eğitim günleri net <strong>5 saat</strong> üzerinden hesaplanmıştır (mola ve yemek süreleri hariç).
+            </div>
+          </div>
+
+          <!-- Contact / Offer Form -->
+          <div class="summary-section" style="background: rgba(255, 255, 255, 0.02); margin-top: 16px;">
+            <h3 style="font-size: 16px; margin-bottom: 12px; color: var(--text);">Bu Program İçin Teklif Alın</h3>
+            <form id="offer-form" class="builder-form">
+              <div class="form-group-builder">
+                <input type="text" id="user-name" class="form-input-builder" placeholder="Ad Soyad" required>
+              </div>
+              <div class="form-group-builder">
+                <input type="text" id="user-company" class="form-input-builder" placeholder="Şirket Adı" required>
+              </div>
+              <div class="form-group-builder">
+                <input type="email" id="user-email" class="form-input-builder" placeholder="E-posta" required>
+              </div>
+              <div class="form-group-builder">
+                <input type="tel" id="user-phone" class="form-input-builder" placeholder="Telefon (Opsiyonel)">
+              </div>
+              <button type="submit" class="btn btn-primary" style="padding: 12px; font-size: 14px; margin-top: 8px;">Müfredatı ve Teklif Talebini Gönder →</button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-container">
+      <span class="footer-copy">AXIOM © 2026 — Artificial Intelligence. Real Competence.</span>
+      <ul class="footer-links">
+        <li><a href="kullanim-kosullari.html">Kullanım Koşulları</a></li>
+        <li><a href="gizlilik-politikasi.html">Gizlilik Politikası</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js?v=12"></script>
+  
+  <script>
+    // Module Data Definition
+    const allModules = [
+      { id: 1, title: "Açılış ve YZ Okuryazarlığı", desc: "YZ neden gündemde? Günlük hayatta YZ örnekleri. YZ, otomasyon ve algoritma farkı.", duration: 0.50, category: "giris" },
+      { id: 2, title: "Temel Kavramlar", desc: "Dar YZ, üretken YZ, ML, DL, LLM, multimodal AI, temel terimler.", duration: 0.75, category: "giris" },
+      { id: 3, title: "Üretken YZ ve LLM Mantığı", desc: "ChatGPT, Claude, Gemini mantığı; token, bağlam, halüsinasyon, güncellik sınırı.", duration: 0.75, category: "giris" },
+      { id: 4, title: "Prompt Engineering Mini Workshop", desc: "Rol, bağlam, görev, format, kısıt. Kötü prompt / iyi prompt karşılaştırması.", duration: 1.00, category: "yazarici" },
+      { id: 5, title: "YZ Araç Ekosistemi Canlı Demo", desc: "Metin, araştırma, özetleme, görsel üretim, kısa video ve ses örnekleri.", duration: 0.75, category: "giris" },
+      { id: 6, title: "Güvenli, Etik ve Sorumlu Kullanım", desc: "Kişisel veri, ticari sır, KVKK/GDPR farkındalığı, deepfake, kaynak doğrulama.", duration: 0.75, category: "veri_hukuk" },
+      { id: 7, title: "Kapanış ve Kişisel Aksiyon Planı", desc: "Katılımcı kendi işi için 2 kullanım senaryosu ve 1 prompt şablonu belirler.", duration: 0.50, category: "strateji" },
+      { id: 8, title: "Hızlı YZ Giriş ve Kavram Tazeleme", desc: "YZ, ML, DL, LLM, üretken YZ, RAG, fine-tuning ve agent farkı.", duration: 0.50, category: "giris" },
+      { id: 9, title: "Prompt Engineering Workshop", desc: "Rol, bağlam, görev, format, örnek, kısıt. Zincirleme prompt, kalite kontrol, şablonlar.", duration: 1.25, category: "yazarici" },
+      { id: 10, title: "İş Yazışmaları ve İçerik Üretimi", desc: "E-posta, teklif metni, toplantı özeti, LinkedIn postu, eğitim içeriği, müşteri cevabı.", duration: 1.00, category: "yazarici" },
+      { id: 11, title: "Araştırma, Analiz ve Raporlama", desc: "PDF/Word özetleme, karşılaştırma, sektör analizi, rakip analizi, müşteri brifingi.", duration: 1.00, category: "strateji" },
+      { id: 12, title: "RAG ve Mini AI Asistan Mantığı", desc: "Kurum dokümanından cevap üretme, kişisel bilgi tabanı, basit agent senaryosu.", duration: 0.75, category: "mldl" },
+      { id: 13, title: "Güvenli Kullanım ve Doğrulama", desc: "Hangi veri girilmez? Kaynak kontrolü, halüsinasyon tespiti, onay mekanizması.", duration: 0.50, category: "veri_hukuk" },
+      { id: 14, title: "Görsel Üretimi Workshop", desc: "Afiş, kapak, sosyal medya görseli, ürün konsepti, marka uyumu, görsel prompt yazımı.", duration: 0.75, category: "yazarici" },
+      { id: 15, title: "Video Üretimi Workshop", desc: "Kling ile kısa tanıtım videosu, eğitim videosu, sahne planı, storyboard, video promptları.", duration: 0.85, category: "yazarici" },
+      { id: 16, title: "Müzik ve Ses Üretimi Workshop", desc: "Suno ile jingle, intro, eğitim arka plan müziği, marka tonu, sözlü/sözsüz müzik, telif notları.", duration: 0.60, category: "yazarici" },
+      { id: 17, title: "Basit Web Tasarım Workshop", desc: "Google Stitch ile landing page fikri, ekran yapısı, CTA, renk/görsel dili, no-code web taslak üretimi.", duration: 1.00, category: "yazarici" },
+      { id: 18, title: "Basit App Tasarım Workshop", desc: "Google Stitch ile app fikri, kullanıcı akışı, ekran listesi, onboarding, paywall, MVP taslakları.", duration: 1.05, category: "yazarici" },
+      { id: 19, title: "Final Mini Proje", desc: "Katılımcı bir ürün/kampanya için metin + görsel + Kling video + Suno müzik + Stitch web/app taslağı üretir.", duration: 0.75, category: "strateji" },
+      { id: 20, title: "Açılış ve YZ’nin Yeni Çağı", desc: "Neden şimdi? İş dünyasında dönüşüm, fırsatlar ve riskler.", duration: 0.50, category: "giris" },
+      { id: 21, title: "Büyük Dil Modelleri", desc: "GPT, Claude, Gemini, Llama; token, bağlam, halüsinasyon, doğrulama.", duration: 0.90, category: "giris" },
+      { id: 22, title: "Prompt Engineering Derin Workshop", desc: "Persona, örnekle yönlendirme, format, kalite kontrol, prompt kütüphanesi.", duration: 1.20, category: "yazarici" },
+      { id: 23, title: "RAG, Fine-Tuning ve Agent Mantığı", desc: "RAG, fine-tuning farkı, kişisel/kurumsal bilgi tabanı, AI agent kavramı.", duration: 0.85, category: "mldl" },
+      { id: 24, title: "Gün Sonu Uygulama", desc: "3 prompt, 1 mini asistan fikri ve güvenli kullanım kontrol listesi.", duration: 0.85, category: "strateji" },
+      { id: 25, title: "Makine Öğrenmesine Giriş", desc: "Denetimli, denetimsiz, pekiştirmeli öğrenme, sınıflandırma ve regresyon.", duration: 0.70, category: "mldl" },
+      { id: 26, title: "ML Algoritmaları ve Proje Akışı", desc: "Karar ağaçları, Random Forest, SVM, KNN, veri hazırlama, metrikler, overfitting.", duration: 0.70, category: "mldl" },
+      { id: 27, title: "Derin Öğrenme Temelleri", desc: "Yapay sinir ağları, aktivasyon, backpropagation, GPU ve büyük veri etkisi.", duration: 0.70, category: "mldl" },
+      { id: 28, title: "Modern DL Mimarileri", desc: "CNN, RNN/LSTM, GAN, Transformer, transfer learning, fine-tuning.", duration: 0.75, category: "mldl" },
+      { id: 29, title: "NLP ve LLM Uygulamaları", desc: "Tokenization, sentiment analysis, özetleme, chatbot, soru-cevap, RAG.", duration: 0.75, category: "mldl" },
+      { id: 30, title: "Computer Vision ve Görsel YZ", desc: "Nesne tanıma, OCR, yüz tanıma, kalite kontrol, görüntü üretimi.", duration: 0.75, category: "mldl" },
+      { id: 31, title: "Mini Teknik Demo", desc: "Basit sınıflandırma veya görsel demo; teknik olmayan katılımcı için anlaşılır anlatım.", duration: 0.65, category: "mldl" },
+      { id: 32, title: "Big Data ve YZ İlişkisi", desc: "5V, veri gölleri, veri ambarları, veri kalitesi, gerçek zamanlı veri.", duration: 0.55, category: "veri_hukuk" },
+      { id: 33, title: "IoT, Edge AI, VR/AR ve Yeni Deneyimler", desc: "IoT mimarisi, Edge AI, dijital ikizler, AR/VR, sanal asistanlar.", duration: 0.70, category: "strateji" },
+      { id: 34, title: "YZ ve Siber Güvenlik", desc: "Anomali tespiti, phishing/malware tespiti, adversarial attack, data poisoning.", duration: 0.75, category: "veri_hukuk" },
+      { id: 35, title: "YZ’nin Hukuki Boyutu", desc: "EU AI Act, GDPR, KVKK, sorumluluk, fikri mülkiyet, sözleşmeler, compliance.", duration: 0.90, category: "veri_hukuk" },
+      { id: 36, title: "YZ Etiği ve Güvenilir AI", desc: "Bias, açıklanabilirlik, mahremiyet, deepfake, manipülasyon, sürdürülebilirlik.", duration: 0.90, category: "veri_hukuk" },
+      { id: 37, title: "AI Kullanım Politikası Workshop", desc: "Kurum içi YZ kuralları, veri sınıfları, onay mekanizması, risk matrisi.", duration: 1.20, category: "veri_hukuk" },
+      { id: 38, title: "YZ Araçları ve Platform Haritası", desc: "Araç seçimi, hangi iş için hangi araç, kurumsal kullanım kriterleri.", duration: 0.45, category: "yazarici" },
+      { id: 39, title: "İleri Prompt ve Workflow Tasarımı", desc: "Persona, zincirleme görev, kalite kontrol, prompt kütüphanesi, tekrar kullanılabilir akış.", duration: 0.75, category: "yazarici" },
+      { id: 40, title: "Sektörel YZ Uygulamaları", desc: "Finans, sağlık, perakende, üretim, ulaşım, insan kaynakları, pazarlama, çağrı merkezi.", duration: 0.90, category: "strateji" },
+      { id: 41, title: "YZ Proje Yönetimi", desc: "İş problemi tanımlama, YZ uygun mu, ROI, veri keşfi, fizibilite, ekip rolleri.", duration: 0.75, category: "strateji" },
+      { id: 42, title: "MLOps ve Üretime Alma Farkındalığı", desc: "Model versiyonlama, monitoring, A/B test, retraining, technical debt, production gap.", duration: 0.70, category: "mldl" },
+      { id: 43, title: "Kurumsal YZ Stratejisi", desc: "AI Canvas, kullanım senaryosu önceliklendirme, risk/etki matrisi, quick win seçimi.", duration: 0.80, category: "strateji" },
+      { id: 44, title: "Final Workshop: Pilot YZ Projesi", desc: "Problem, veri, araç, risk, çıktı, başarı metriği ve 30-60-90 günlük yol haritası.", duration: 1.35, category: "strateji" },
+      { id: 45, title: "Sunum, Değerlendirme ve Kapanış", desc: "Grup sunumları, geri bildirim, kişisel aksiyon planı, kaynaklar ve sertifikasyon önerileri.", duration: 0.50, category: "strateji" },
+      { id: 46, title: "Teknik Python / Jupyter laboratuvarı (Genişletme)", desc: "Teknik ekipler için ML model denemesi istenirse.", duration: 5.00, category: "opsiyonel" },
+      { id: 47, title: "Kurumsal RAG bot prototipi (Genişletme)", desc: "Şirket dokümanlarıyla çalışan iç bilgi asistanı istenirse.", duration: 5.00, category: "opsiyonel" },
+      { id: 48, title: "AI Agent ve otomasyon laboratuvarı (Genişletme)", desc: "Mail, takvim, CRM veya dosya iş akışı bağlanacaksa.", duration: 5.00, category: "opsiyonel" },
+      { id: 49, title: "Sektöre özel vaka günü (Genişletme)", desc: "Bankacılık, çağrı merkezi, satış, eğitim veya perakende için özelleştirme.", duration: 5.00, category: "opsiyonel" }
+    ];
+
+    // State
+    let selectedModules = [];
+
+    // Elements
+    const modulesPool = document.getElementById('modules-pool');
+    const programList = document.getElementById('program-list');
+    const summaryHours = document.getElementById('summary-hours');
+    const summaryDays = document.getElementById('summary-days');
+    const catTabs = document.getElementById('cat-tabs');
+    const offerForm = document.getElementById('offer-form');
+
+    // Initialize Page
+    function init() {
+      renderPool('all');
+      setupEventListeners();
+      updateProgramUI();
+    }
+
+    // Render Draggable Pool
+    function renderPool(filterCat = 'all') {
+      modulesPool.innerHTML = '';
+      const filtered = filterCat === 'all' 
+        ? allModules 
+        : allModules.filter(m => m.category === filterCat);
+
+      filtered.forEach(m => {
+        const card = document.createElement('div');
+        card.className = 'module-card';
+        card.draggable = true;
+        card.dataset.id = m.id;
+        
+        card.innerHTML = `
+          <div class="module-header">
+            <div class="module-card-title">${m.title}</div>
+            <div class="module-duration">${formatHour(m.duration)} sa</div>
+          </div>
+          <div class="module-desc">${m.desc}</div>
+          <div class="module-actions">
+            <button class="action-btn add-to-prog-btn" data-id="${m.id}" title="Programa Ekle">+</button>
+          </div>
+        `;
+        
+        // Drag start listener
+        card.addEventListener('dragstart', (e) => {
+          card.classList.add('dragging');
+          e.dataTransfer.setData('text/plain', m.id);
+        });
+
+        card.addEventListener('dragend', () => {
+          card.classList.remove('dragging');
+        });
+
+        modulesPool.appendChild(card);
+      });
+    }
+
+    // Setup Event Listeners
+    function setupEventListeners() {
+      // Filter Tabs
+      catTabs.addEventListener('click', (e) => {
+        const btn = e.target.closest('.tab-btn');
+        if (!btn) return;
+        
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderPool(btn.dataset.cat);
+      });
+
+      // Quick Add Button Click (in Pool)
+      modulesPool.addEventListener('click', (e) => {
+        const btn = e.target.closest('.add-to-prog-btn');
+        if (!btn) return;
+        const id = parseInt(btn.dataset.id);
+        addModuleToProgram(id);
+      });
+
+      // Drag over and drop in Dropzone
+      programList.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        programList.classList.add('drag-over');
+        
+        const draggable = document.querySelector('.dragging');
+        if (draggable && draggable.parentNode === programList) {
+          // Reordering existing items inside dropzone
+          const afterElement = getDragAfterElement(programList, e.clientY);
+          if (afterElement == null) {
+            programList.appendChild(draggable);
+          } else {
+            programList.insertBefore(draggable, afterElement);
+          }
+        }
+      });
+
+      programList.addEventListener('dragleave', () => {
+        programList.classList.remove('drag-over');
+      });
+
+      programList.addEventListener('drop', (e) => {
+        e.preventDefault();
+        programList.classList.remove('drag-over');
+        
+        const id = parseInt(e.dataTransfer.getData('text/plain'));
+        const draggable = document.querySelector('.dragging');
+        
+        if (draggable && draggable.parentNode === modulesPool) {
+          // Dropped from pool to program list
+          addModuleToProgram(id);
+        } else {
+          // Just completed a reorder
+          reorderSelectedList();
+        }
+      });
+
+      // Remove / Click inside program list
+      programList.addEventListener('click', (e) => {
+        const removeBtn = e.target.closest('.remove-btn');
+        if (!removeBtn) return;
+        const index = parseInt(removeBtn.dataset.index);
+        selectedModules.splice(index, 1);
+        updateProgramUI();
+      });
+
+      // Quick Templates
+      document.getElementById('load-template-1').addEventListener('click', () => loadTemplate('giris'));
+      document.getElementById('load-template-2').addEventListener('click', () => loadTemplate('uygulamali'));
+      document.getElementById('load-template-3').addEventListener('click', () => loadTemplate('kapsamli'));
+      document.getElementById('clear-program').addEventListener('click', () => {
+        selectedModules = [];
+        updateProgramUI();
+      });
+
+      // Submit Quote Form
+      offerForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (selectedModules.length === 0) {
+          alert('Lütfen önce müfredatınıza en az bir modül ekleyin.');
+          return;
+        }
+
+        const name = document.getElementById('user-name').value.trim();
+        const company = document.getElementById('user-company').value.trim();
+        const email = document.getElementById('user-email').value.trim();
+        const phone = document.getElementById('user-phone').value.trim();
+
+        // Format selected modules text
+        const modulesText = selectedModules.map((m, i) => `${i+1}. ${m.title} (${m.duration} sa)`).join('\n');
+        const durationText = getDurationBreakdown(calculateTotalHours());
+
+        // Simulated submission
+        alert(`Tebrikler ${name}! Özel Yapay Zeka Eğitim Programınız Oluşturuldu.\n\n` +
+              `Şirket: ${company}\n` +
+              `E-posta: ${email}\n` +
+              `Telefon: ${phone || '-'}\n\n` +
+              `Talep Edilen Müfredat:\n${modulesText}\n\n` +
+              `Toplam Süre: ${durationText}\n\n` +
+              `Teklif talebiniz başarıyla alındı! En kısa sürede sizinle iletişime geçeceğiz.`);
+              
+        offerForm.reset();
+        selectedModules = [];
+        updateProgramUI();
+      });
+    }
+
+    // Add module to program array
+    function addModuleToProgram(id) {
+      const moduleData = allModules.find(m => m.id === id);
+      if (!moduleData) return;
+      
+      // Make a copy of the module data so we don't mutate global data
+      selectedModules.push({ ...moduleData });
+      updateProgramUI();
+    }
+
+    // Load templates
+    function loadTemplate(type) {
+      selectedModules = [];
+      if (type === 'giris') {
+        // Modüller 1'den 7'ye
+        for (let i = 1; i <= 7; i++) {
+          const mod = allModules.find(m => m.id === i);
+          if (mod) selectedModules.push({ ...mod });
+        }
+      } else if (type === 'uygulamali') {
+        // Modüller 8'den 19'a
+        for (let i = 8; i <= 19; i++) {
+          const mod = allModules.find(m => m.id === i);
+          if (mod) selectedModules.push({ ...mod });
+        }
+      } else if (type === 'kapsamli') {
+        // Modüller 20'den 45'e kadar (Kapsamlı 33 modül)
+        // Kapsamlı eğitim docx modülleri 20 ile 45 arasında yer almaktadır.
+        for (let i = 20; i <= 45; i++) {
+          const mod = allModules.find(m => m.id === i);
+          if (mod) selectedModules.push({ ...mod });
+        }
+      }
+      updateProgramUI();
+    }
+
+    // Reorder array based on DOM children order after drag reorder
+    function reorderSelectedList() {
+      const DOMChildren = Array.from(programList.querySelectorAll('.selected-card'));
+      const newOrderedList = [];
+      
+      DOMChildren.forEach(child => {
+        const id = parseInt(child.dataset.id);
+        const indexInArr = parseInt(child.dataset.index);
+        
+        // Push the original item to new array
+        if (selectedModules[indexInArr]) {
+          newOrderedList.push(selectedModules[indexInArr]);
+        }
+      });
+      
+      selectedModules = newOrderedList;
+      updateProgramUI();
+    }
+
+    // Update Dropzone & Summary UI
+    function updateProgramUI() {
+      // Clear Dropzone
+      const placeholder = programList.querySelector('.drop-placeholder');
+      programList.innerHTML = '';
+      
+      if (selectedModules.length === 0) {
+        if (placeholder) programList.appendChild(placeholder);
+        else {
+          const newPlaceholder = document.createElement('div');
+          newPlaceholder.className = 'drop-placeholder';
+          newPlaceholder.textContent = 'Modülleri buraya sürükleyip bırakın veya listeden (+) butonuna basarak ekleyin. Sürükleyerek sırasını değiştirebilirsiniz.';
+          programList.appendChild(newPlaceholder);
+        }
+      } else {
+        selectedModules.forEach((m, idx) => {
+          const card = document.createElement('div');
+          card.className = 'selected-card';
+          card.draggable = true;
+          card.dataset.id = m.id;
+          card.dataset.index = idx;
+
+          card.innerHTML = `
+            <div class="selected-meta">
+              <span class="selected-index">${idx + 1}</span>
+              <div class="selected-info">
+                <span class="selected-title">${m.title}</span>
+                <span style="font-size: 11px; color: var(--text-muted);">${formatHour(m.duration)} saat</span>
+              </div>
+            </div>
+            <button class="remove-btn" data-index="${idx}" title="Kaldır">×</button>
+          `;
+
+          // Reordering drag events
+          card.addEventListener('dragstart', () => {
+            card.classList.add('dragging');
+          });
+
+          card.addEventListener('dragend', () => {
+            card.classList.remove('dragging');
+          });
+
+          programList.appendChild(card);
+        });
+      }
+
+      // Calculate & update summaries
+      const totalHours = calculateTotalHours();
+      summaryHours.textContent = formatHour(totalHours) + ' Saat';
+      summaryDays.textContent = getDurationBreakdown(totalHours);
+    }
+
+    // Helper: calculate total selected hours
+    function calculateTotalHours() {
+      return selectedModules.reduce((acc, curr) => acc + curr.duration, 0);
+    }
+
+    // Helper: break down duration into "X Gün Y Saat"
+    function getDurationBreakdown(totalHours) {
+      if (totalHours === 0) return '0 Gün';
+      
+      const days = Math.floor(totalHours / 5);
+      const remainingHours = totalHours % 5;
+      
+      let text = '';
+      if (days > 0) {
+        text += `${days} Gün `;
+      }
+      if (remainingHours > 0) {
+        text += `${formatHour(remainingHours)} Saat`;
+      }
+      
+      return text.trim();
+    }
+
+    // Helper: format hour representation (e.g. 0.5 -> 0,5 or 1.25 -> 1,25)
+    function formatHour(num) {
+      // Formats float numbers properly with commas
+      return parseFloat(num.toFixed(2)).toString().replace('.', ',');
+    }
+
+    // Helper for drag position ordering
+    function getDragAfterElement(container, y) {
+      const draggableElements = [...container.querySelectorAll('.selected-card:not(.dragging)')];
+      
+      return draggableElements.reduce((closest, child) => {
+        const box = child.getBoundingClientRect();
+        const offset = y - box.top - box.height / 2;
+        if (offset < 0 && offset > closest.offset) {
+          return { offset: offset, element: child };
+        } else {
+          return closest;
+        }
+      }, { offset: Number.NEGATIVE_INFINITY }).element;
+    }
+
+    // Run
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>

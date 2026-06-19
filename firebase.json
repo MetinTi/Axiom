@@ -2,6 +2,8 @@
   "hosting": {
     "site": "axiom-competence",
     "public": ".",
+    "cleanUrls": true,
+    "trailingSlash": false,
     "ignore": [
       "firebase.json",
       ".firebaserc",
