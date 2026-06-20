@@ -37,12 +37,12 @@
       -webkit-backdrop-filter: blur(12px);
       display: flex;
       flex-direction: column;
-      height: 750px;
+      height: auto !important;
     }
 
     .panel-box.right-panel {
-      height: auto;
-      max-height: 850px;
+      height: auto !important;
+      max-height: none !important;
       position: sticky;
       top: 110px;
     }
@@ -94,11 +94,11 @@
     /* Module List & Cards */
     .scroll-list {
       flex: 1;
-      overflow-y: auto;
       padding-right: 8px;
       display: flex;
       flex-direction: column;
       gap: 12px;
+      overflow: visible !important;
     }
 
     .module-card {
@@ -193,13 +193,13 @@
       border: 2px dashed var(--border);
       border-radius: 12px;
       min-height: 150px;
-      max-height: 280px;
-      overflow-y: auto;
       display: flex;
       flex-direction: column;
       gap: 12px;
       padding: 16px;
       transition: var(--transition-fast);
+      overflow: visible !important;
+      max-height: none !important;
     }
 
     .dropzone.drag-over {
@@ -345,6 +345,26 @@
       border-color: var(--gold);
       box-shadow: 0 0 10px var(--gold-glow);
     }
+
+    /* Ready-made packages styles */
+    .package-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .package-card:hover {
+      transform: translateY(-4px);
+    }
+    #load-template-1:hover {
+      border-color: #00f5ff !important;
+      box-shadow: 0 0 20px rgba(0, 245, 255, 0.2) !important;
+    }
+    #load-template-2:hover {
+      border-color: #a855f7 !important;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.2) !important;
+    }
+    #load-template-3:hover {
+      border-color: #e9bc3f !important;
+      box-shadow: 0 0 20px rgba(233, 188, 63, 0.2) !important;
+    }
   </style>
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/axiom_logo.png">
@@ -400,12 +420,48 @@
         </p>
       </div>
 
-      <!-- Quick Template Loaders -->
-      <div style="display: flex; gap: 12px; justify-content: center; margin-bottom: 30px; flex-wrap: wrap;">
-        <button class="btn btn-secondary template-btn" id="load-template-1">1. Paket: Giriş Eğitimi (5 sa)</button>
-        <button class="btn btn-secondary template-btn" id="load-template-2">2. Paket: Uygulamalı Eğitim (10 sa)</button>
-        <button class="btn btn-secondary template-btn" id="load-template-3">3. Paket: Kapsamlı Eğitim (25 sa)</button>
-        <button class="btn btn-secondary template-btn" id="clear-program" style="border-color: rgba(255, 85, 85, 0.4); color: #ff5555; background: rgba(255, 0, 0, 0.02);">Temizle</button>
+      <!-- Hazır Eğitim Paketleri Bölümü -->
+      <div style="max-width: 900px; margin: 0 auto 40px auto; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 24px; backdrop-filter: blur(12px);">
+        <h3 style="text-align: center; font-size: 15px; color: #00f5ff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700;">Hazır Eğitim Paketleri</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; align-items: stretch;">
+          
+          <div class="package-card" id="load-template-1" style="background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; text-align: center; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+            <div>
+              <div style="font-size: 12px; color: #00f5ff; font-weight: 800; text-transform: uppercase; margin-bottom: 6px;">1. Paket</div>
+              <h4 style="font-size: 15px; color: white; font-weight: 700; margin-bottom: 8px;">Giriş Eğitimi</h4>
+              <p style="font-size: 12px; color: var(--text-muted, #777); line-height: 1.4; margin: 0;">Yapay zekaya hızlı ve etkili bir başlangıç yapmak isteyenler için temel okuryazarlık modülleri.</p>
+            </div>
+            <div style="margin-top: 15px; display: flex; justify-content: center;">
+              <span style="font-size: 13px; font-weight: 700; color: #00f5ff; background: rgba(0, 245, 255, 0.05); padding: 4px 12px; border-radius: 20px;">5 Saat</span>
+            </div>
+          </div>
+
+          <div class="package-card" id="load-template-2" style="background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; text-align: center; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+            <div>
+              <div style="font-size: 12px; color: #a855f7; font-weight: 800; text-transform: uppercase; margin-bottom: 6px;">2. Paket</div>
+              <h4 style="font-size: 15px; color: white; font-weight: 700; margin-bottom: 8px;">Uygulamalı Eğitim</h4>
+              <p style="font-size: 12px; color: var(--text-muted, #777); line-height: 1.4; margin: 0;">Yaratıcı YZ araçları, prompt tasarımı ve pratik atölye çalışmaları içeren kapsamlı uygulama paketi.</p>
+            </div>
+            <div style="margin-top: 15px; display: flex; justify-content: center;">
+              <span style="font-size: 13px; font-weight: 700; color: #a855f7; background: rgba(168, 85, 247, 0.05); padding: 4px 12px; border-radius: 20px;">10 Saat</span>
+            </div>
+          </div>
+
+          <div class="package-card" id="load-template-3" style="background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; text-align: center; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+            <div>
+              <div style="font-size: 12px; color: #e9bc3f; font-weight: 800; text-transform: uppercase; margin-bottom: 6px;">3. Paket</div>
+              <h4 style="font-size: 15px; color: white; font-weight: 700; margin-bottom: 8px;">Kapsamlı Eğitim</h4>
+              <p style="font-size: 12px; color: var(--text-muted, #777); line-height: 1.4; margin: 0;">ML/DL temelleri, veri güvenliği, siber güvenlik, hukuk, etik ve kurumsal YZ stratejisi dahil uçtan uca uzmanlık programı.</p>
+            </div>
+            <div style="margin-top: 15px; display: flex; justify-content: center;">
+              <span style="font-size: 13px; font-weight: 700; color: #e9bc3f; background: rgba(233, 188, 63, 0.05); padding: 4px 12px; border-radius: 20px;">25 Saat</span>
+            </div>
+          </div>
+
+        </div>
+        <div style="text-align: center; margin-top: 20px; display: flex; justify-content: center;">
+          <button id="clear-program" style="border: 1px solid rgba(255, 85, 85, 0.3); color: #ff5555; background: rgba(255, 0, 0, 0.02); padding: 8px 24px; border-radius: 50px; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.3s ease;">Seçimleri Temizle</button>
+        </div>
       </div>
 
       <!-- The Core Workspace Grid -->
@@ -415,7 +471,7 @@
         <div class="panel-box">
           <div class="panel-title">
             <span>Modüller Havuzu</span>
-            <span style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Toplam 37 Modül + 4 Opsiyon</span>
+            <span style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Toplam 49 Modül + 4 Opsiyon</span>
           </div>
 
           <!-- Category Filters Tab -->
@@ -480,7 +536,7 @@
               <div class="form-group-builder">
                 <input type="tel" id="user-phone" class="form-input-builder" placeholder="Telefon (Opsiyonel)">
               </div>
-              <button type="submit" class="btn btn-primary" style="padding: 12px; font-size: 14px; margin-top: 8px;">Müfredatı ve Teklif Talebini Gönder →</button>
+              <button type="submit" class="btn btn-primary" style="padding: 14px 16px; font-size: 14px; margin-top: 8px; white-space: normal !important; line-height: 1.4; height: auto !important; text-align: center; justify-content: center; align-items: center; display: inline-flex;">Müfredatı ve Teklif Talebini Gönder →</button>
             </form>
           </div>
 
@@ -556,7 +612,11 @@
       { id: 46, title: "Teknik Python / Jupyter laboratuvarı (Genişletme)", desc: "Teknik ekipler için ML model denemesi istenirse.", duration: 5.00, category: "opsiyonel" },
       { id: 47, title: "Kurumsal RAG bot prototipi (Genişletme)", desc: "Şirket dokümanlarıyla çalışan iç bilgi asistanı istenirse.", duration: 5.00, category: "opsiyonel" },
       { id: 48, title: "AI Agent ve otomasyon laboratuvarı (Genişletme)", desc: "Mail, takvim, CRM veya dosya iş akışı bağlanacaksa.", duration: 5.00, category: "opsiyonel" },
-      { id: 49, title: "Sektöre özel vaka günü (Genişletme)", desc: "Bankacılık, çağrı merkezi, satış, eğitim veya perakende için özelleştirme.", duration: 5.00, category: "opsiyonel" }
+      { id: 49, title: "Sektöre özel vaka günü (Genişletme)", desc: "Bankacılık, çağrı merkezi, satış, eğitim veya perakende için özelleştirme.", duration: 5.00, category: "opsiyonel" },
+      { id: 50, title: "Cursor ve YZ Destekli Yazılım Geliştirme", desc: "Cursor IDE ve GitHub Copilot ile kod üretimi, hata ayıklama ve YZ asistanlarıyla hızlı uygulama prototipleme pratikleri.", duration: 1.00, category: "mldl" },
+      { id: 51, title: "NotebookLM ile Akıllı Bilgi Yönetimi ve Verimlilik", desc: "Google NotebookLM kullanımı, kurumsal kaynakları bilgi tabanına dönüştürme, döküman analizi, otomatik özetleme ve podcast üretimi.", duration: 0.75, category: "yazarici" },
+      { id: 52, title: "n8n ile YZ Entegreli İş Otomasyonları", desc: "No-code/low-code otomasyon aracı n8n kullanımı. LLM'leri, veri kaynaklarını ve API'leri bağlayarak otonom arka plan iş akışları tasarlama.", duration: 1.00, category: "yazarici" },
+      { id: 53, title: "Türkiye Yapay Zeka Ekosistemi ve 2026 Trendleri", desc: "Türkiye YZ haritası, yerli YZ girişimleri/unicornlar, Agentic AI dalgası, Türkçe LLM çalışmaları ve yasal mevzuatlar (EU AI Act & TBMM Raporu).", duration: 0.75, category: "strateji" }
     ];
 
     // State
@@ -846,11 +906,9 @@
       const remainingHours = totalHours % 5;
       
       let text = '';
-      if (days > 0) {
-        text += `${days} Gün `;
-      }
+      text += `${days} Gün `;
       if (remainingHours > 0) {
-        text += `${formatHour(remainingHours)} Saat`;
+        text += `+ ${formatHour(remainingHours)} Saat`;
       }
       
       return text.trim();

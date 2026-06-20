@@ -27,3 +27,12 @@
 - **Önbellek Atlattırma (Cache Busting)**: Tarayıcıların eski JavaScript dosyasını önbellekten yüklemesini önlemek için tüm `.html` dosyalarındaki `app.js` referansı `app.js?v=12` olarak güncellendi.
 - **Alt Sayfaların Kurtarılması**: Sürüm güncellemeleri yapılırken yerel olarak içi boşalan 19 adet alt sayfa (programlar, dna, blog, iletişim vb.), Firebase Hosting'in sürüm geçmişindeki bir önceki sağlam yedekten geri çekilerek kurtarıldı.
 - **Deploy**: Tüm hata düzeltmeleri ve kurtarma işlemlerinin ardından site test edildi ve `axiom-competence.web.app` adresine son güncel haliyle Firebase Hosting aracılığıyla başarıyla canlıya alındı.
+
+## 2026-06-20
+
+- **Referans Logoları Kayar Bant Entegrasyonu**: Peak Gelişim ve UNIQ referanslarından derlenen 17 adet marka logosu, Türkçe ve İngilizce ana sayfalara sabit header'ın hemen altına gelecek şekilde sonsuz kayan şerit halinde yerleştirildi. Türkçe karakterlerden ötürü hotlink hatası veren görsel URL'leri elenerek ASCII-only, yüksek çözünürlüklü alternatifleriyle güncellendi. Logolar, kullanıcının talebi üzerine varsayılan gri tonlama (grayscale), opaklık (opacity) ve karartma filtreleri kaldırılarak tam renkli, parlak ve net olarak `42px` yükseklikte tasarlandı.
+- **Satış × AI Müfredat Kartları**: `programlar.html` ve `en/programlar.html` sayfalarında Satış × AI eğitim müfredatının 3 ana aşaması (Hiper-İstihbarat, Simülasyon, Co-Pilot) modern ve şık kart yapısıyla detaylandırıldı.
+- **Before/After Karşılaştırma Matrisi**: Geleneksel satış süreçleri ile YZ destekli Axiom satış süreçlerini hazırlık, sunum, itiraz ve zaman verimliliği boyutlarında kıyaslayan modern cam-efektli bir matris tablosu eklendi.
+- **SVG Radar Grafiği**: Roademy platformundaki 5 kritik yetkinlik boyutunu ölçen parlayan, neon mor ve altın temalı bir SVG radar grafiği çizildi. İngilizce etiketlerin dar ekranlarda kesilmesini önlemek amacıyla viewBox koordinat alanı `-80 -50 560 500` olarak genişletilerek sol ve sağ kenarlarda fazladan 120px'lik güvenli alan kazanıldı.
+- **Deploy & Canlı**: Tüm güncellemeler test edildi ve `axiom-competence.web.app` adresine başarıyla dağıtıldı.
+

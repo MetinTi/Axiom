@@ -2515,3 +2515,366 @@ footer {
   color: var(--gold);
   text-shadow: 0 0 6px var(--gold);
 }
+
+/* Referans Logo Kayar Bant (Logo Marquee Ticker) */
+.logo-ticker {
+  margin-top: var(--header-height);
+  width: 100%;
+  background: rgba(7, 7, 15, 0.4);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  padding: 16px 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 99;
+}
+
+.logo-ticker-container {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+
+.logo-ticker-inner {
+  display: flex;
+  gap: 60px;
+  width: max-content;
+  animation: marquee-scroll 45s linear infinite;
+  align-items: center;
+}
+
+.logo-ticker:hover .logo-ticker-inner {
+  animation-play-state: paused;
+}
+
+.logo-ticker-inner img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  filter: none;
+  opacity: 1;
+  transition: var(--transition-fast);
+}
+
+.logo-ticker-inner img:hover {
+  transform: scale(1.05);
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 30px));
+  }
+}
+
+/* Adjust Hero when logo ticker is present */
+.logo-ticker + .hero {
+  padding-top: 40px;
+  min-height: calc(100vh - 75px);
+}
+
+/* Satış x AI Detaylı Kartlar & Aşama Akışı */
+.stages-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+@media (max-width: 992px) {
+  .stages-wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.stage-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-fast);
+}
+
+.stage-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 229, 0, 0.3);
+  transform: translateY(-4px);
+}
+
+.stage-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  opacity: 0;
+  transition: var(--transition-fast);
+}
+
+.stage-card:hover::before {
+  opacity: 1;
+}
+
+.stage-badge {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.stage-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.stage-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Before / After Karşılaştırma Matrisi */
+.matrix-section {
+  margin-top: 80px;
+}
+
+.matrix-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(7, 7, 15, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 800px;
+}
+
+.matrix-table th, 
+.matrix-table td {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.matrix-table th {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.matrix-table tr:last-child td {
+  border-bottom: none;
+}
+
+.matrix-table td {
+  font-size: 15px;
+  line-height: 1.6;
+  vertical-align: top;
+}
+
+.matrix-table td:first-child {
+  font-weight: 700;
+  color: var(--text);
+  width: 25%;
+}
+
+.matrix-table td:nth-child(2) {
+  color: var(--text-muted);
+  width: 37.5%;
+}
+
+.matrix-table td:nth-child(3) {
+  color: var(--text);
+  background: rgba(255, 229, 0, 0.02);
+  width: 37.5%;
+}
+
+.matrix-table tr:hover td {
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.matrix-table tr:hover td:nth-child(3) {
+  background: rgba(255, 229, 0, 0.04);
+}
+
+.text-accent-before {
+  color: #ef4444; /* Geleneksel durum için soluk kırmızı */
+}
+
+.text-accent-after {
+  color: var(--gold);
+  text-shadow: 0 0 8px rgba(255, 229, 0, 0.3);
+}
+
+/* SVG Radar Grafiği */
+.radar-section {
+  margin-top: 80px;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 60px;
+}
+
+@media (max-width: 768px) {
+  .radar-section {
+    padding: 30px 20px;
+  }
+}
+
+.radar-grid-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .radar-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.radar-info-side {
+  max-width: 540px;
+}
+
+.radar-chart-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.radar-svg-wrapper {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1/1;
+}
+
+.radar-grid-polygon {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.06);
+  stroke-width: 1;
+}
+
+.radar-grid-line {
+  stroke: rgba(255, 255, 255, 0.06);
+  stroke-width: 1;
+  stroke-dasharray: 4, 4;
+}
+
+.radar-level-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 8px;
+  fill: rgba(255, 255, 255, 0.25);
+}
+
+.radar-axis-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  fill: var(--text-muted);
+  transition: var(--transition-fast);
+}
+
+.radar-svg-wrapper:hover .radar-axis-text {
+  fill: var(--text);
+}
+
+.radar-poly-before {
+  fill: rgba(239, 68, 68, 0.15);
+  stroke: #ef4444;
+  stroke-width: 2;
+  transition: var(--transition-fast);
+}
+
+.radar-poly-after {
+  fill: rgba(255, 229, 0, 0.12);
+  stroke: var(--gold);
+  stroke-width: 3;
+  filter: drop-shadow(0 0 8px rgba(255, 229, 0, 0.5));
+  transition: var(--transition-fast);
+}
+
+.radar-poly-after:hover {
+  fill: rgba(255, 229, 0, 0.22);
+  stroke-width: 4;
+}
+
+.radar-point-before {
+  fill: #ef4444;
+  stroke: #07070f;
+  stroke-width: 1.5;
+  r: 4;
+  transition: var(--transition-fast);
+}
+
+.radar-point-after {
+  fill: var(--gold);
+  stroke: #07070f;
+  stroke-width: 2;
+  r: 5;
+  filter: drop-shadow(0 0 4px rgba(255, 229, 0, 0.8));
+  transition: var(--transition-fast);
+}
+
+.radar-point-after:hover {
+  r: 7;
+  fill: #fff;
+}
+
+.legend-container {
+  display: flex;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.legend-color-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.legend-color-dot.before {
+  background: #ef4444;
+}
+
+.legend-color-dot.after {
+  background: var(--gold);
+  box-shadow: 0 0 6px rgba(255, 229, 0, 0.6);
+}

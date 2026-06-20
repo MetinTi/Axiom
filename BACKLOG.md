@@ -2,7 +2,7 @@
 
 > **Kural (kesin):** Buradaki hiçbir madde silinmeyecek; hepsi bilgi olarak kalacak. Yapılanlar işaretlenip (ör. ~~üstü çizili~~, `DONE`, tarih) **listede kalmaya devam edecek** — metin budanmayacak.
 
-> Son güncelleme: 2026-06-19 (Günün geliştirme hedefleri, alıntı kutuları dikey hizalama düzeltmesi, ana sayfa hero buton yönlendirmeleri, Firebase deploy tamamlandı)
+> Son güncelleme: 2026-06-20 (Logo kayar bant, Satış × AI detaylı müfredat kartları, Before/After tablosu, SVG radar grafiği entegrasyonu ve Firebase deploy tamamlandı)
 
 ---
 
@@ -22,6 +22,9 @@
 | TF10 | ~~**Ana Sayfa Hero Butonlarının Yönlendirilmesi**~~ **DONE 2026-06-19** | "Hemen Başla" butonunun `programlar.html` sayfasına; "Daha Fazla Bilgi Al" butonunun ise `iletisim.html` sayfasına yönlendirilmesi. |
 | TF11 | ~~**Canlıya Alma (Firebase Deploy)**~~ **DONE 2026-06-19** | Tüm bu geliştirmelerin `axiom-competence.web.app` adresine Firebase Hosting ile canlıya alınması. |
 | TF12 | ~~**JavaScript Hata Düzeltmesi & Sayfa Kurtarma**~~ **DONE 2026-06-19** | `app.js` sözdizimi hatasının giderilmesi, önbellek sorunu için `v=12` versiyonlama yapılması ve alt sayfaların kurtarılması. |
+| TF13 | ~~**Referans Logoları Kayar Bant Entegrasyonu**~~ **DONE 2026-06-20** | Peak Gelişim ve UNIQ logolarından derlenen 17 adet logonun, Türkçe ve İngilizce ana sayfalara (grayscaleden arındırılmış, 42px yükseklikte) sonsuz döngülü kayar şerit olarak eklenmesi. |
+| TF14 | ~~**Satış × AI Müfredat Kartları & Karşılaştırma Matrisi**~~ **DONE 2026-06-20** | Satış × AI programı altına 3 aşamalı müfredat kartlarının ve geleneksel/AI yetkinlik farklarını gösteren tablonun entegrasyonu. |
+| TF15 | ~~**SVG Radar Grafiği (Roademy Ölçüm Modülü)**~~ **DONE 2026-06-20** | 5 boyutlu yetkinlik artışını simgeleyen parlayan SVG radar grafiğinin programlar (TR/EN) sayfalarına etiket taşma korumasıyla eklenmesi ve deploy edilmesi. |
 
 
 ---

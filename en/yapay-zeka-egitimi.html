@@ -37,12 +37,12 @@
       -webkit-backdrop-filter: blur(12px);
       display: flex;
       flex-direction: column;
-      height: 750px;
+      height: auto !important;
     }
 
     .panel-box.right-panel {
-      height: auto;
-      max-height: 850px;
+      height: auto !important;
+      max-height: none !important;
       position: sticky;
       top: 110px;
     }
@@ -94,11 +94,11 @@
     /* Module List & Cards */
     .scroll-list {
       flex: 1;
-      overflow-y: auto;
       padding-right: 8px;
       display: flex;
       flex-direction: column;
       gap: 12px;
+      overflow: visible !important;
     }
 
     .module-card {
@@ -193,13 +193,13 @@
       border: 2px dashed var(--border);
       border-radius: 12px;
       min-height: 150px;
-      max-height: 280px;
-      overflow-y: auto;
       display: flex;
       flex-direction: column;
       gap: 12px;
       padding: 16px;
       transition: var(--transition-fast);
+      overflow: visible !important;
+      max-height: none !important;
     }
 
     .dropzone.drag-over {
@@ -345,6 +345,26 @@
       border-color: var(--gold);
       box-shadow: 0 0 10px var(--gold-glow);
     }
+
+    /* Ready-made packages styles */
+    .package-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .package-card:hover {
+      transform: translateY(-4px);
+    }
+    #load-template-1:hover {
+      border-color: #00f5ff !important;
+      box-shadow: 0 0 20px rgba(0, 245, 255, 0.2) !important;
+    }
+    #load-template-2:hover {
+      border-color: #a855f7 !important;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.2) !important;
+    }
+    #load-template-3:hover {
+      border-color: #e9bc3f !important;
+      box-shadow: 0 0 20px rgba(233, 188, 63, 0.2) !important;
+    }
   </style>
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="../assets/axiom_logo.png">
@@ -400,12 +420,48 @@
         </p>
       </div>
 
-      <!-- Quick Template Loaders -->
-      <div style="display: flex; gap: 12px; justify-content: center; margin-bottom: 30px; flex-wrap: wrap;">
-        <button class="btn btn-secondary template-btn" id="load-template-1">1. Package: Intro Training (5 h)</button>
-        <button class="btn btn-secondary template-btn" id="load-template-2">2. Package: Applied Training (10 h)</button>
-        <button class="btn btn-secondary template-btn" id="load-template-3">3. Package: Comprehensive Training (25 h)</button>
-        <button class="btn btn-secondary template-btn" id="clear-program" style="border-color: rgba(255, 85, 85, 0.4); color: #ff5555; background: rgba(255, 0, 0, 0.02);">Clear</button>
+      <!-- Ready-Made Training Packages Section -->
+      <div style="max-width: 900px; margin: 0 auto 40px auto; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 24px; backdrop-filter: blur(12px);">
+        <h3 style="text-align: center; font-size: 15px; color: #00f5ff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700;">Ready-Made Training Packages</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; align-items: stretch;">
+          
+          <div class="package-card" id="load-template-1" style="background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; text-align: center; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+            <div>
+              <div style="font-size: 12px; color: #00f5ff; font-weight: 800; text-transform: uppercase; margin-bottom: 6px;">1. Package</div>
+              <h4 style="font-size: 15px; color: white; font-weight: 700; margin-bottom: 8px;">Intro Training</h4>
+              <p style="font-size: 12px; color: var(--text-muted, #777); line-height: 1.4; margin: 0;">Basic literacy modules for those who want to make a quick and effective start in artificial intelligence.</p>
+            </div>
+            <div style="margin-top: 15px; display: flex; justify-content: center;">
+              <span style="font-size: 13px; font-weight: 700; color: #00f5ff; background: rgba(0, 245, 255, 0.05); padding: 4px 12px; border-radius: 20px;">5 Hours</span>
+            </div>
+          </div>
+
+          <div class="package-card" id="load-template-2" style="background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; text-align: center; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+            <div>
+              <div style="font-size: 12px; color: #a855f7; font-weight: 800; text-transform: uppercase; margin-bottom: 6px;">2. Package</div>
+              <h4 style="font-size: 15px; color: white; font-weight: 700; margin-bottom: 8px;">Applied Training</h4>
+              <p style="font-size: 12px; color: var(--text-muted, #777); line-height: 1.4; margin: 0;">A comprehensive application package including creative AI tools, prompt design, and practical workshops.</p>
+            </div>
+            <div style="margin-top: 15px; display: flex; justify-content: center;">
+              <span style="font-size: 13px; font-weight: 700; color: #a855f7; background: rgba(168, 85, 247, 0.05); padding: 4px 12px; border-radius: 20px;">10 Hours</span>
+            </div>
+          </div>
+
+          <div class="package-card" id="load-template-3" style="background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; text-align: center; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+            <div>
+              <div style="font-size: 12px; color: #e9bc3f; font-weight: 800; text-transform: uppercase; margin-bottom: 6px;">3. Package</div>
+              <h4 style="font-size: 15px; color: white; font-weight: 700; margin-bottom: 8px;">Comprehensive Training</h4>
+              <p style="font-size: 12px; color: var(--text-muted, #777); line-height: 1.4; margin: 0;">An end-to-end expertise program including ML/DL fundamentals, data security, cybersecurity, law, ethics, and corporate AI strategy.</p>
+            </div>
+            <div style="margin-top: 15px; display: flex; justify-content: center;">
+              <span style="font-size: 13px; font-weight: 700; color: #e9bc3f; background: rgba(233, 188, 63, 0.05); padding: 4px 12px; border-radius: 20px;">25 Hours</span>
+            </div>
+          </div>
+
+        </div>
+        <div style="text-align: center; margin-top: 20px; display: flex; justify-content: center;">
+          <button id="clear-program" style="border: 1px solid rgba(255, 85, 85, 0.3); color: #ff5555; background: rgba(255, 0, 0, 0.02); padding: 8px 24px; border-radius: 50px; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.3s ease;">Clear Selections</button>
+        </div>
       </div>
 
       <!-- The Core Workspace Grid -->
@@ -415,7 +471,7 @@
         <div class="panel-box">
           <div class="panel-title">
             <span>Modules Pool</span>
-            <span style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">37 Modules + 4 Options</span>
+            <span style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">49 Modules + 4 Options</span>
           </div>
 
           <!-- Category Filters Tab -->
@@ -480,7 +536,7 @@
               <div class="form-group-builder">
                 <input type="tel" id="user-phone" class="form-input-builder" placeholder="Phone (Optional)">
               </div>
-              <button type="submit" class="btn btn-primary" style="padding: 12px; font-size: 14px; margin-top: 8px;">Send Program & Request Quote →</button>
+              <button type="submit" class="btn btn-primary" style="padding: 14px 16px; font-size: 14px; margin-top: 8px; white-space: normal !important; line-height: 1.4; height: auto !important; text-align: center; justify-content: center; align-items: center; display: inline-flex;">Send Program & Request Quote →</button>
             </form>
           </div>
 
@@ -556,7 +612,11 @@
       { id: 46, title: "Technical Python / Jupyter Lab (Extension)", desc: "ML model testing for technical teams if required.", duration: 5.00, category: "opsiyonel" },
       { id: 47, title: "Corporate RAG Bot Prototype (Extension)", desc: "Internal knowledge assistant working with company documents.", duration: 5.00, category: "opsiyonel" },
       { id: 48, title: "AI Agent and Automation Lab (Extension)", desc: "Connecting email, calendar, CRM, or file workflows.", duration: 5.00, category: "opsiyonel" },
-      { id: 49, title: "Industry-Specific Case Study Day (Extension)", desc: "Customization for banking, call centers, sales, education, or retail.", duration: 5.00, category: "opsiyonel" }
+      { id: 49, title: "Industry-Specific Case Study Day (Extension)", desc: "Customization for banking, call centers, sales, education, or retail.", duration: 5.00, category: "opsiyonel" },
+      { id: 50, title: "Cursor & AI-Assisted Software Development", desc: "Code generation and debugging with Cursor IDE and GitHub Copilot, and rapid application prototyping with AI assistants.", duration: 1.00, category: "mldl" },
+      { id: 51, title: "NotebookLM for Smart Knowledge Management & Productivity", desc: "Using Google NotebookLM, transforming corporate resources into a knowledge base, document analysis, auto-summarization, and podcast generation.", duration: 0.75, category: "yazarici" },
+      { id: 52, title: "n8n-Powered AI Workflow Automations", desc: "Using the no-code/low-code automation tool n8n. Designing autonomous background workflows by connecting LLMs, data sources, and APIs.", duration: 1.00, category: "yazarici" },
+      { id: 53, title: "Turkish AI Ecosystem & 2026 Trends", desc: "Turkish AI startup map, local success stories/unicorns, Agentic AI wave, Turkish LLM developments, and regulatory frameworks (EU AI Act & TBMM Report).", duration: 0.75, category: "strateji" }
     ];
 
     // State
@@ -843,11 +903,9 @@
       const remainingHours = totalHours % 5;
       
       let text = '';
-      if (days > 0) {
-        text += `${days} Day${days > 1 ? 's' : ''} `;
-      }
+      text += `${days} Day${days !== 1 ? 's' : ''} `;
       if (remainingHours > 0) {
-        text += `${formatHour(remainingHours)} Hour${remainingHours > 1 ? 's' : ''}`;
+        text += `+ ${formatHour(remainingHours)} Hour${remainingHours !== 1 ? 's' : ''}`;
       }
       
       return text.trim();
